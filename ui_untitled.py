@@ -4,20 +4,22 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from Button import Button
+from ButtonFlag import ButtonFlag
+from Icon import Icon
 
 
 class Ui_MainWindow(object):
     # Constants
-    LENGTH_AXIS_X = 15
-    LENGTH_AXIS_Y = 15
-    QUANTITY_BOMBS = 20
+    LENGTH_AXIS_X = 3 #15
+    LENGTH_AXIS_Y = 3 #15
+    QUANTITY_BOMBS = 1 #20
 
     def __init__(self):
         self.centralwidget = QWidget()
         # First line
-        self.pushButtonA1 = Button()
-        self.pushButtonA2 = Button()
-        self.pushButtonA3 = Button()
+        #self.pushButtonA1 = Button()
+        #self.pushButtonA2 = Button()
+        #self.pushButtonA3 = Button()
         self.pushButtonA4 = Button()
         self.pushButtonA5 = Button()
         self.pushButtonA6 = Button()
@@ -31,9 +33,9 @@ class Ui_MainWindow(object):
         self.pushButtonA14 = Button()
         self.pushButtonA15 = Button()
         # Second line
-        self.pushButtonB1 = Button()
-        self.pushButtonB2 = Button()
-        self.pushButtonB3 = Button()
+        #self.pushButtonB1 = Button()
+        #self.pushButtonB2 = Button()
+        #self.pushButtonB3 = Button()
         self.pushButtonB4 = Button()
         self.pushButtonB5 = Button()
         self.pushButtonB6 = Button()
@@ -47,9 +49,9 @@ class Ui_MainWindow(object):
         self.pushButtonB14 = Button()
         self.pushButtonB15 = Button()
         # Third line
-        self.pushButtonC1 = Button()
-        self.pushButtonC2 = Button()
-        self.pushButtonC3 = Button()
+        # self.pushButtonC1 = Button()
+        # self.pushButtonC2 = Button()
+        # self.pushButtonC3 = Button()
         self.pushButtonC4 = Button()
         self.pushButtonC5 = Button()
         self.pushButtonC6 = Button()
@@ -256,9 +258,15 @@ class Ui_MainWindow(object):
         self.pushButtonO15 = Button()
         # Create board
         self.board = []
+        # Button flag
+        self.pushButtonFlag = ButtonFlag()
 
     def create_board(self):
         self.board = \
+            [[self.pushButtonA1, self.pushButtonA2, self.pushButtonA3],
+             [self.pushButtonB1, self.pushButtonB2, self.pushButtonB3],
+             [self.pushButtonC1, self.pushButtonC2, self.pushButtonC3]]
+        """self.board = \
             [[self.pushButtonA1, self.pushButtonA2, self.pushButtonA3, self.pushButtonA4, self.pushButtonA5,
               self.pushButtonA6, self.pushButtonA7, self.pushButtonA8, self.pushButtonA9, self.pushButtonA10,
               self.pushButtonA11, self.pushButtonA12, self.pushButtonA13, self.pushButtonA14, self.pushButtonA15],
@@ -304,7 +312,7 @@ class Ui_MainWindow(object):
              [self.pushButtonO1, self.pushButtonO2, self.pushButtonO3, self.pushButtonO4, self.pushButtonO5,
               self.pushButtonO6, self.pushButtonO7, self.pushButtonO8, self.pushButtonO9, self.pushButtonO10,
               self.pushButtonO11, self.pushButtonO12, self.pushButtonO13, self.pushButtonO14, self.pushButtonO15]
-             ]
+             ]"""
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(u"MainWindow")
@@ -312,7 +320,26 @@ class Ui_MainWindow(object):
         self.centralwidget = QWidget()
         self.centralwidget.setObjectName(u"centralwidget")
         # First line
-        self.pushButtonA1 = Button(self.centralwidget, QRect(10, 30, 30, 30))
+        #self.pushButtonA1 = Button(self.centralwidget, QRect(10, 30, 30, 30))
+        self.pushButtonA1 = QPushButton(self.centralwidget)
+        self.pushButtonA1.setGeometry(QRect(10, 30, 30, 30))
+        self.pushButtonA2 = QPushButton(self.centralwidget)
+        self.pushButtonA2.setGeometry(QRect(40, 30, 30, 30))
+        self.pushButtonA3 = QPushButton(self.centralwidget)
+        self.pushButtonA3.setGeometry(QRect(70, 30, 30, 30))
+        self.pushButtonB1 = QPushButton(self.centralwidget)
+        self.pushButtonB1.setGeometry(QRect(10, 60, 30, 30))
+        self.pushButtonB2 = QPushButton(self.centralwidget)
+        self.pushButtonB2.setGeometry(QRect(40, 60, 30, 30))
+        self.pushButtonB3 = QPushButton(self.centralwidget)
+        self.pushButtonB3.setGeometry(QRect(70, 60, 30, 30))
+        self.pushButtonC1 = QPushButton(self.centralwidget)
+        self.pushButtonC1.setGeometry(QRect(10, 90, 30, 30))
+        self.pushButtonC2 = QPushButton(self.centralwidget)
+        self.pushButtonC2.setGeometry(QRect(40, 90, 30, 30))
+        self.pushButtonC3 = QPushButton(self.centralwidget)
+        self.pushButtonC3.setGeometry(QRect(70, 90, 30, 30))
+        """
         self.pushButtonA2 = Button(self.centralwidget, QRect(40, 30, 30, 30))
         self.pushButtonA3 = Button(self.centralwidget, QRect(70, 30, 30, 30))
         self.pushButtonA4 = Button(self.centralwidget, QRect(100, 30, 30, 30))
@@ -551,36 +578,142 @@ class Ui_MainWindow(object):
         self.pushButtonO13 = Button(self.centralwidget, QRect(370, 450, 30, 30))
         self.pushButtonO14 = Button(self.centralwidget, QRect(400, 450, 30, 30))
         self.pushButtonO15 = Button(self.centralwidget, QRect(430, 450, 30, 30))
+"""
+        self.pushButtonFlag = ButtonFlag(self.centralwidget, QRect(460, 450, 30, 30))
 
         MainWindow.setCentralWidget(self.centralwidget)
-
         self.create_board()
+        self.icons = Icon()
+        for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
+            for j in range(Ui_MainWindow.LENGTH_AXIS_X):
+                self.board[i][j].value = '0'
+                self.board[i][j].status = 'close'
+        self.board[0][0].clicked.connect(self.click_pushButtonA1)
+        self.pushButtonA2.clicked.connect(self.click_pushButtonA2)
+        self.pushButtonA3.clicked.connect(self.click_pushButtonA3)
+        self.pushButtonB1.clicked.connect(self.click_pushButtonB1)
+        self.pushButtonB2.clicked.connect(self.click_pushButtonB2)
+        self.pushButtonB3.clicked.connect(self.click_pushButtonB3)
+        self.pushButtonC1.clicked.connect(self.click_pushButtonC1)
+        self.pushButtonC2.clicked.connect(self.click_pushButtonC2)
+        self.pushButtonC3.clicked.connect(self.click_pushButtonC3)
+
+
         self.bombs_position_raffle()
+        print('pos as bombas')
         self.define_other_fields()
+
+        self.function_click_buttons = \
+            [[self.click_pushButtonA1, self.click_pushButtonA2, self.click_pushButtonA3],
+             [self.click_pushButtonB1, self.click_pushButtonB2, self.click_pushButtonB3],
+             [self.click_pushButtonC1, self.click_pushButtonC2, self.click_pushButtonC3]]
+
+    def get_range_limits(self, x, y):
+        x_min = 0 if x - 1 < 0 else x - 1
+        x_max = Ui_MainWindow.LENGTH_AXIS_X if x + 2 > Ui_MainWindow.LENGTH_AXIS_X else x + 2
+        y_min = 0 if y - 1 < 0 else y - 1
+        y_max = Ui_MainWindow.LENGTH_AXIS_Y if y + 2 > Ui_MainWindow.LENGTH_AXIS_Y else y + 2
+        return x_min, x_max, y_min, y_max
+
+    def process_neighbour_buttons(self, x, y):
+        x_min, x_max, y_min, y_max = self.get_range_limits(x, y)
+        for i in range(x_min, x_max):
+            for j in range(y_min, y_max):
+                if self.board[j][i].isEnabled():
+                    self.function_click_buttons[j][i]()
+
+    def click_pushButtonA1(self):
+        if self.abrir(0, 0) == '0':
+            self.process_neighbour_buttons(0, 0)
+
+    def click_pushButtonA2(self):
+        if self.abrir(1, 0) == '0':
+            self.process_neighbour_buttons(1, 0)
+
+    def click_pushButtonA3(self):
+        if self.abrir(2, 0) == '0':
+            self.process_neighbour_buttons(2, 0)
+
+    def click_pushButtonB1(self):
+        if self.abrir(0, 1) == '0':
+            self.process_neighbour_buttons(0, 1)
+
+    def click_pushButtonB2(self):
+        if self.abrir(1, 1) == '0':
+            self.process_neighbour_buttons(1, 1)
+
+    def click_pushButtonB3(self):
+        if self.abrir(2, 1) == '0':
+            self.process_neighbour_buttons(2, 1)
+
+    def click_pushButtonC1(self):
+        if self.abrir(0, 2) == '0':
+            self.process_neighbour_buttons(0, 2)
+
+    def click_pushButtonC2(self):
+        if self.abrir(1, 2) == '0':
+            self.process_neighbour_buttons(1, 2)
+
+    def click_pushButtonC3(self):
+        if self.abrir(2, 2) == '0':
+            self.process_neighbour_buttons(2, 2)
+
+    def abrir(self, x, y):
+        icon = self.show_image(self.board[y][x].value)
+        self.board[y][x].setIcon(icon)
+        self.board[y][x].setIconSize(QSize(30, 30))
+        self.board[y][x].setEnabled(False)
+        return self.board[y][x].value
+
+    def show_image(self, value):
+        if value == 'b':
+            icon = self.icons.get_icon_bomb()
+        elif value == 'B':
+            icon = self.icons.get_icon_bomb_exploded()
+        elif value == '0':
+            icon = self.icons.get_icon_blank()
+        elif value == '1':
+            icon = self.icons.get_icon_number_1()
+        elif value == '2':
+            icon = self.icons.get_icon_number_2()
+        elif value == '3':
+            icon = self.icons.get_icon_number_3()
+        elif value == '4':
+            icon = self.icons.get_icon_number_4()
+        elif value == '5':
+            icon = self.icons.get_icon_number_5()
+        elif value == '6':
+            icon = self.icons.get_icon_number_6()
+        elif value == '7':
+            icon = self.icons.get_icon_number_7()
+        elif value == '8':
+            icon = self.icons.get_icon_number_8()
+        else:
+            raise "Invalid value"
+        return icon
 
     def bombs_position_raffle(self):
         quant_bombs = 0
         while quant_bombs < Ui_MainWindow.QUANTITY_BOMBS:
-            x = randint(0, Ui_MainWindow.LENGTH_AXIS_X - 1)
-            y = randint(0, Ui_MainWindow.LENGTH_AXIS_Y - 1)
-            if self.board[y][x].get_value() == "0":
-                self.board[y][x].set_value("b")
-                print(x, y)
+            x = 2 #randint(0, Ui_MainWindow.LENGTH_AXIS_X - 1)
+            y = 2 #randint(0, Ui_MainWindow.LENGTH_AXIS_Y - 1)
+            print(x, y)
+            if self.board[y][x].value != "b":
+                self.board[y][x].value = "b"
                 quant_bombs += 1
 
     def define_other_fields(self):
         for y in range(0, Ui_MainWindow.LENGTH_AXIS_Y):
             for x in range(0, Ui_MainWindow.LENGTH_AXIS_X):
-                if self.board[y][x].get_value() != 'b':
+                if self.board[y][x].value != 'b':
                     count_bombs = 0
                     for i in range(y - 1, y + 2):
                         for j in range(x - 1, x + 2):
                             if not ((i, j) == (y, x) or i < 0 or j < 0 or i >= Ui_MainWindow.LENGTH_AXIS_Y or
                                     j >= Ui_MainWindow.LENGTH_AXIS_X):
-                                if self.board[i][j].get_value() == 'b':
+                                if self.board[i][j].value == 'b':
                                     count_bombs += 1
-                    print(count_bombs)
-                    self.board[y][x].set_value(str(count_bombs))
+                    self.board[y][x].value = str(count_bombs)
 
 
 class CriarTelaPrincipal(QMainWindow, Ui_MainWindow):

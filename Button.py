@@ -2,6 +2,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from Icon import Icon
+from ButtonFlag import ButtonFlag
 
 
 class Button(QPushButton):
@@ -12,9 +13,9 @@ class Button(QPushButton):
         self.icons = Icon()
         self.value = '0'
         self.icon = ""
-        self.button.clicked.connect(self.show_image)
 
     def show_image(self):
+        print("aaaa")
         if self.value == 'b':
             self.icon = self.icons.get_icon_bomb()
         elif self.value == 'B':
