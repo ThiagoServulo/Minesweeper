@@ -787,26 +787,8 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.create_board()
         self.icons = Icon()
-        for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
-            for j in range(Ui_MainWindow.LENGTH_AXIS_X):
-                self.board[i][j].value = '0'
-                """
-        for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
-            for j in range(Ui_MainWindow.LENGTH_AXIS_X):
-                self.board[i][j].value = '0'
-        self.board[0][0].clicked.connect(self.click_pushButtonA1)
-        self.pushButtonA2.clicked.connect(self.click_pushButtonA2)
-        self.pushButtonA3.clicked.connect(self.click_pushButtonA3)
-        self.pushButtonB1.clicked.connect(self.click_pushButtonB1)
-        self.pushButtonB2.clicked.connect(self.click_pushButtonB2)
-        self.pushButtonB3.clicked.connect(self.click_pushButtonB3)
-        self.pushButtonC1.clicked.connect(self.click_pushButtonC1)
-        self.pushButtonC2.clicked.connect(self.click_pushButtonC2)
-        self.pushButtonC3.clicked.connect(self.click_pushButtonC3)"""
-
-
+        self.erase_board()
         self.bombs_position_raffle()
-        print('pos as bombas')
         self.define_other_fields()
 
         self.function_click_buttons = \
@@ -874,6 +856,11 @@ class Ui_MainWindow(object):
         for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
             for j in range(Ui_MainWindow.LENGTH_AXIS_X):
                 self.board[i][j].clicked.connect(self.function_click_buttons[i][j])
+
+    def erase_board(self):
+        for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
+            for j in range(Ui_MainWindow.LENGTH_AXIS_X):
+                self.board[i][j].value = '0'
 
     def get_range_limits(self, x, y):
         x_min = 0 if x - 1 < 0 else x - 1
@@ -1569,8 +1556,10 @@ class Ui_MainWindow(object):
         self.board[y][x].setIcon(icon)
         self.board[y][x].setIconSize(QSize(30, 30))
         self.board[y][x].setEnabled(False)
+        if self.board[y][x].value == 'b':
+            self.end_game()
         if self.board[y][x].value == '0':
-            self.process_neighbour_buttons(x ,y)
+            self.process_neighbour_buttons(x, y)
 
     def show_image(self, value):
         if value == 'b':
@@ -1604,7 +1593,6 @@ class Ui_MainWindow(object):
         while quant_bombs < Ui_MainWindow.QUANTITY_BOMBS:
             x = randint(0, Ui_MainWindow.LENGTH_AXIS_X - 1)
             y = randint(0, Ui_MainWindow.LENGTH_AXIS_Y - 1)
-            print(x, y)
             if self.board[y][x].value != "b":
                 self.board[y][x].value = "b"
                 quant_bombs += 1
@@ -1622,6 +1610,10 @@ class Ui_MainWindow(object):
                                     count_bombs += 1
                     self.board[y][x].value = str(count_bombs)
 
+    def end_game(self):
+        msgBox = QMessageBox()
+        msgBox.setText("Fim de jogo. Você perdeu")
+        msgBox.exec()
 
 class CriarTelaPrincipal(QMainWindow, Ui_MainWindow):
     def __init__(self):
