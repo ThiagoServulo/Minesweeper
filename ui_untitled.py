@@ -890,911 +890,687 @@ class Ui_MainWindow(object):
                     self.function_click_buttons[j][i]()
 
     def click_pushButtonA1(self):
-        if self.abrir(0, 0) == '0':
-            self.process_neighbour_buttons(0, 0)
+        self.process_button(0, 0)
 
     def click_pushButtonA2(self):
-        if self.abrir(1, 0) == '0':
-            self.process_neighbour_buttons(1, 0)
+        self.process_button(1, 0)
 
     def click_pushButtonA3(self):
-        if self.abrir(2, 0) == '0':
-            self.process_neighbour_buttons(2, 0)
+        self.process_button(2, 0)
 
     def click_pushButtonA4(self):
-        if self.abrir(3, 0) == '0':
-            self.process_neighbour_buttons(3, 0)
+        self.process_button(3, 0)
 
     def click_pushButtonA5(self):
-        if self.abrir(4, 0) == '0':
-            self.process_neighbour_buttons(4, 0)
+        self.process_button(4, 0)
 
     def click_pushButtonA6(self):
-        if self.abrir(5, 0) == '0':
-            self.process_neighbour_buttons(5, 0)
+        self.process_button(5, 0)
 
     def click_pushButtonA7(self):
-        if self.abrir(6, 0) == '0':
-            self.process_neighbour_buttons(6, 0)
+        self.process_button(6, 0)
 
     def click_pushButtonA8(self):
-        if self.abrir(7, 0) == '0':
-            self.process_neighbour_buttons(7, 0)
+        self.process_button(7, 0)
 
     def click_pushButtonA9(self):
-        if self.abrir(8, 0) == '0':
-            self.process_neighbour_buttons(8, 0)
+        self.process_button(8, 0)
 
     def click_pushButtonA10(self):
-        if self.abrir(9, 0) == '0':
-            self.process_neighbour_buttons(9, 0)
+        self.process_button(9, 0)
 
     def click_pushButtonA11(self):
-        if self.abrir(10, 0) == '0':
-            self.process_neighbour_buttons(10, 0)
+        self.process_button(10, 0)
 
     def click_pushButtonA12(self):
-        if self.abrir(11, 0) == '0':
-            self.process_neighbour_buttons(11, 0)
+        self.process_button(11, 0)
 
     def click_pushButtonA13(self):
-        if self.abrir(12, 0) == '0':
-            self.process_neighbour_buttons(12, 0)
+        self.process_button(12, 0)
 
     def click_pushButtonA14(self):
-        if self.abrir(13, 0) == '0':
-            self.process_neighbour_buttons(13, 0)
+        self.process_button(13, 0)
 
     def click_pushButtonA15(self):
-        if self.abrir(14, 0) == '0':
-            self.process_neighbour_buttons(14, 0)
+        self.process_button(14, 0)
 
     def click_pushButtonB1(self):
-        if self.abrir(0, 1) == '0':
-            self.process_neighbour_buttons(0, 1)
+        self.process_button(0, 1)
 
     def click_pushButtonB2(self):
-        if self.abrir(1, 1) == '0':
-            self.process_neighbour_buttons(1, 1)
+        self.process_button(1, 1)
 
     def click_pushButtonB3(self):
-        if self.abrir(2, 1) == '0':
-            self.process_neighbour_buttons(2, 1)
+        self.process_button(2, 1)
 
     def click_pushButtonB4(self):
-        if self.abrir(3, 1) == '0':
-            self.process_neighbour_buttons(3, 1)
+        self.process_button(3, 1)
 
     def click_pushButtonB5(self):
-        if self.abrir(4, 1) == '0':
-            self.process_neighbour_buttons(4, 1)
+        self.process_button(4, 1)
 
     def click_pushButtonB6(self):
-        if self.abrir(5, 1) == '0':
-            self.process_neighbour_buttons(5, 1)
+        self.process_button(5, 1)
 
     def click_pushButtonB7(self):
-        if self.abrir(6, 1) == '0':
-            self.process_neighbour_buttons(6, 1)
+        self.process_button(6, 1)
 
     def click_pushButtonB8(self):
-        if self.abrir(7, 1) == '0':
-            self.process_neighbour_buttons(7, 1)
+        self.process_button(7, 1)
 
     def click_pushButtonB9(self):
-        if self.abrir(8, 1) == '0':
-            self.process_neighbour_buttons(8, 1)
+        self.process_button(8, 1)
 
     def click_pushButtonB10(self):
-        if self.abrir(9, 1) == '0':
-            self.process_neighbour_buttons(9, 1)
+        self.process_button(9, 1)
 
     def click_pushButtonB11(self):
-        if self.abrir(10, 1) == '0':
-            self.process_neighbour_buttons(10, 1)
+        self.process_button(10, 1)
 
     def click_pushButtonB12(self):
-        if self.abrir(11, 1) == '0':
-            self.process_neighbour_buttons(11, 1)
+        self.process_button(11, 1)
 
     def click_pushButtonB13(self):
-        if self.abrir(12, 1) == '0':
-            self.process_neighbour_buttons(12, 1)
+        self.process_button(12, 1)
 
     def click_pushButtonB14(self):
-        if self.abrir(13, 1) == '0':
-            self.process_neighbour_buttons(13, 1)
+        self.process_button(13, 1)
 
     def click_pushButtonB15(self):
-        if self.abrir(14, 1) == '0':
-            self.process_neighbour_buttons(14, 1)
+        self.process_button(14, 1)
 
     def click_pushButtonC1(self):
-        if self.abrir(0, 2) == '0':
-            self.process_neighbour_buttons(0, 2)
+        self.process_button(0, 2)
 
     def click_pushButtonC2(self):
-        if self.abrir(1, 2) == '0':
-            self.process_neighbour_buttons(1, 2)
+        self.process_button(1, 2)
 
     def click_pushButtonC3(self):
-        if self.abrir(2, 2) == '0':
-            self.process_neighbour_buttons(2, 2)
+        self.process_button(2, 2)
 
     def click_pushButtonC4(self):
-        if self.abrir(3, 2) == '0':
-            self.process_neighbour_buttons(3, 2)
+        self.process_button(3, 2)
 
     def click_pushButtonC5(self):
-        if self.abrir(4, 2) == '0':
-            self.process_neighbour_buttons(4, 2)
+        self.process_button(4, 2)
 
     def click_pushButtonC6(self):
-        if self.abrir(5, 2) == '0':
-            self.process_neighbour_buttons(5, 2)
+        self.process_button(5, 2)
 
     def click_pushButtonC7(self):
-        if self.abrir(6, 2) == '0':
-            self.process_neighbour_buttons(6, 2)
+        self.process_button(6, 2)
 
     def click_pushButtonC8(self):
-        if self.abrir(7, 2) == '0':
-            self.process_neighbour_buttons(7, 2)
+        self.process_button(7, 2)
 
     def click_pushButtonC9(self):
-        if self.abrir(8, 2) == '0':
-            self.process_neighbour_buttons(8, 2)
+        self.process_button(8, 2)
 
     def click_pushButtonC10(self):
-        if self.abrir(9, 2) == '0':
-            self.process_neighbour_buttons(9, 2)
+        self.process_button(9, 2)
 
     def click_pushButtonC11(self):
-        if self.abrir(10, 2) == '0':
-            self.process_neighbour_buttons(10, 2)
+        self.process_button(10, 2)
 
     def click_pushButtonC12(self):
-        if self.abrir(11, 2) == '0':
-            self.process_neighbour_buttons(11, 2)
+        self.process_button(11, 2)
 
     def click_pushButtonC13(self):
-        if self.abrir(12, 2) == '0':
-            self.process_neighbour_buttons(12, 2)
+        self.process_button(12, 2)
 
     def click_pushButtonC14(self):
-        if self.abrir(13, 2) == '0':
-            self.process_neighbour_buttons(13, 2)
+        self.process_button(13, 2)
 
     def click_pushButtonC15(self):
-        if self.abrir(14, 2) == '0':
-            self.process_neighbour_buttons(14, 2)
+        self.process_button(14, 2)
 
     def click_pushButtonD1(self):
-        if self.abrir(0, 3) == '0':
-            self.process_neighbour_buttons(0, 3)
+        self.process_button(0, 3)
 
     def click_pushButtonD2(self):
-        if self.abrir(1, 3) == '0':
-            self.process_neighbour_buttons(1, 3)
+        self.process_button(1, 3)
 
     def click_pushButtonD3(self):
-        if self.abrir(2, 3) == '0':
-            self.process_neighbour_buttons(2, 3)
+        self.process_button(2, 3)
 
     def click_pushButtonD4(self):
-        if self.abrir(3, 3) == '0':
-            self.process_neighbour_buttons(3, 3)
+        self.process_button(3, 3)
 
     def click_pushButtonD5(self):
-        if self.abrir(4, 3) == '0':
-            self.process_neighbour_buttons(4, 3)
+        self.process_button(4, 3)
 
     def click_pushButtonD6(self):
-        if self.abrir(5, 3) == '0':
-            self.process_neighbour_buttons(5, 3)
+        self.process_button(5, 3)
 
     def click_pushButtonD7(self):
-        if self.abrir(6, 3) == '0':
-            self.process_neighbour_buttons(6, 3)
+        self.process_button(6, 3)
 
     def click_pushButtonD8(self):
-        if self.abrir(7, 3) == '0':
-            self.process_neighbour_buttons(7, 3)
+        self.process_button(7, 3)
 
     def click_pushButtonD9(self):
-        if self.abrir(8, 3) == '0':
-            self.process_neighbour_buttons(8, 3)
+        self.process_button(8, 3)
 
     def click_pushButtonD10(self):
-        if self.abrir(9, 3) == '0':
-            self.process_neighbour_buttons(9, 3)
+        self.process_button(9, 3)
 
     def click_pushButtonD11(self):
-        if self.abrir(10, 3) == '0':
-            self.process_neighbour_buttons(10, 3)
+        self.process_button(10, 3)
 
     def click_pushButtonD12(self):
-        if self.abrir(11, 3) == '0':
-            self.process_neighbour_buttons(11, 3)
+        self.process_button(11, 3)
 
     def click_pushButtonD13(self):
-        if self.abrir(12, 3) == '0':
-            self.process_neighbour_buttons(12, 3)
+        self.process_button(12, 3)
 
     def click_pushButtonD14(self):
-        if self.abrir(13, 3) == '0':
-            self.process_neighbour_buttons(13, 3)
+        self.process_button(13, 3)
 
     def click_pushButtonD15(self):
-        if self.abrir(14, 3) == '0':
-            self.process_neighbour_buttons(14, 3)
+        self.process_button(14, 3)
 
     def click_pushButtonE1(self):
-        if self.abrir(0, 4) == '0':
-            self.process_neighbour_buttons(0, 4)
+        self.process_button(0, 4)
 
     def click_pushButtonE2(self):
-        if self.abrir(1, 4) == '0':
-            self.process_neighbour_buttons(1, 4)
+        self.process_button(1, 4)
 
     def click_pushButtonE3(self):
-        if self.abrir(2, 4) == '0':
-            self.process_neighbour_buttons(2, 4)
+        self.process_button(2, 4)
 
     def click_pushButtonE4(self):
-        if self.abrir(3, 4) == '0':
-            self.process_neighbour_buttons(3, 4)
+        self.process_button(3, 4)
 
     def click_pushButtonE5(self):
-        if self.abrir(4, 4) == '0':
-            self.process_neighbour_buttons(4, 4)
+        self.process_button(4, 4)
 
     def click_pushButtonE6(self):
-        if self.abrir(5, 4) == '0':
-            self.process_neighbour_buttons(5, 4)
+        self.process_button(5, 4)
 
     def click_pushButtonE7(self):
-        if self.abrir(6, 4) == '0':
-            self.process_neighbour_buttons(6, 4)
+        self.process_button(6, 4)
 
     def click_pushButtonE8(self):
-        if self.abrir(7, 4) == '0':
-            self.process_neighbour_buttons(7, 4)
+        self.process_button(7, 4)
 
     def click_pushButtonE9(self):
-        if self.abrir(8, 4) == '0':
-            self.process_neighbour_buttons(8, 4)
+        self.process_button(8, 4)
 
     def click_pushButtonE10(self):
-        if self.abrir(9, 4) == '0':
-            self.process_neighbour_buttons(9, 4)
+        self.process_button(9, 4)
 
     def click_pushButtonE11(self):
-        if self.abrir(10, 4) == '0':
-            self.process_neighbour_buttons(10, 4)
+        self.process_button(10, 4)
 
     def click_pushButtonE12(self):
-        if self.abrir(11, 4) == '0':
-            self.process_neighbour_buttons(11, 4)
+        self.process_button(11, 4)
 
     def click_pushButtonE13(self):
-        if self.abrir(12, 4) == '0':
-            self.process_neighbour_buttons(12, 4)
+        self.process_button(12, 4)
 
     def click_pushButtonE14(self):
-        if self.abrir(13, 4) == '0':
-            self.process_neighbour_buttons(13, 4)
+        self.process_button(13, 4)
 
     def click_pushButtonE15(self):
-        if self.abrir(14, 4) == '0':
-            self.process_neighbour_buttons(14, 4)
+        self.process_button(14, 4)
 
     def click_pushButtonF1(self):
-        if self.abrir(0, 5) == '0':
-            self.process_neighbour_buttons(0, 5)
+        self.process_button(0, 5)
 
     def click_pushButtonF2(self):
-        if self.abrir(1, 5) == '0':
-            self.process_neighbour_buttons(1, 5)
+        self.process_button(1, 5)
 
     def click_pushButtonF3(self):
-        if self.abrir(2, 5) == '0':
-            self.process_neighbour_buttons(2, 5)
+        self.process_button(2, 5)
 
     def click_pushButtonF4(self):
-        if self.abrir(3, 5) == '0':
-            self.process_neighbour_buttons(3, 5)
+        self.process_button(3, 5)
 
     def click_pushButtonF5(self):
-        if self.abrir(4, 5) == '0':
-            self.process_neighbour_buttons(4, 5)
+        self.process_button(4, 5)
 
     def click_pushButtonF6(self):
-        if self.abrir(5, 5) == '0':
-            self.process_neighbour_buttons(5, 5)
+        self.process_button(5, 5)
 
     def click_pushButtonF7(self):
-        if self.abrir(6, 5) == '0':
-            self.process_neighbour_buttons(6, 5)
+        self.process_button(6, 5)
 
     def click_pushButtonF8(self):
-        if self.abrir(7, 5) == '0':
-            self.process_neighbour_buttons(7, 5)
+        self.process_button(7, 5)
 
     def click_pushButtonF9(self):
-        if self.abrir(8, 5) == '0':
-            self.process_neighbour_buttons(8, 5)
+        self.process_button(8, 5)
 
     def click_pushButtonF10(self):
-        if self.abrir(9, 5) == '0':
-            self.process_neighbour_buttons(9, 5)
+        self.process_button(9, 5)
 
     def click_pushButtonF11(self):
-        if self.abrir(10, 5) == '0':
-            self.process_neighbour_buttons(10, 5)
+        self.process_button(10, 5)
 
     def click_pushButtonF12(self):
-        if self.abrir(11, 5) == '0':
-            self.process_neighbour_buttons(11, 5)
+        self.process_button(11, 5)
 
     def click_pushButtonF13(self):
-        if self.abrir(12, 5) == '0':
-            self.process_neighbour_buttons(12, 5)
+        self.process_button(12, 5)
 
     def click_pushButtonF14(self):
-        if self.abrir(13, 5) == '0':
-            self.process_neighbour_buttons(13, 5)
+        self.process_button(13, 5)
 
     def click_pushButtonF15(self):
-        if self.abrir(14, 5) == '0':
-            self.process_neighbour_buttons(14, 5)
+        self.process_button(14, 5)
 
     def click_pushButtonG1(self):
-        if self.abrir(0, 6) == '0':
-            self.process_neighbour_buttons(0, 6)
+        self.process_button(0, 6)
 
     def click_pushButtonG2(self):
-        if self.abrir(1, 6) == '0':
-            self.process_neighbour_buttons(1, 6)
+        self.process_button(1, 6)
 
     def click_pushButtonG3(self):
-        if self.abrir(2, 6) == '0':
-            self.process_neighbour_buttons(2, 6)
+        self.process_button(2, 6)
 
     def click_pushButtonG4(self):
-        if self.abrir(3, 6) == '0':
-            self.process_neighbour_buttons(3, 6)
+        self.process_button(3, 6)
 
     def click_pushButtonG5(self):
-        if self.abrir(4, 6) == '0':
-            self.process_neighbour_buttons(4, 6)
+        self.process_button(4, 6)
 
     def click_pushButtonG6(self):
-        if self.abrir(5, 6) == '0':
-            self.process_neighbour_buttons(5, 6)
+        self.process_button(5, 6)
 
     def click_pushButtonG7(self):
-        if self.abrir(6, 6) == '0':
-            self.process_neighbour_buttons(6, 6)
+        self.process_button(6, 6)
 
     def click_pushButtonG8(self):
-        if self.abrir(7, 6) == '0':
-            self.process_neighbour_buttons(7, 6)
+        self.process_button(7, 6)
 
     def click_pushButtonG9(self):
-        if self.abrir(8, 6) == '0':
-            self.process_neighbour_buttons(8, 6)
+        self.process_button(8, 6)
 
     def click_pushButtonG10(self):
-        if self.abrir(9, 6) == '0':
-            self.process_neighbour_buttons(9, 6)
+        self.process_button(9, 6)
 
     def click_pushButtonG11(self):
-        if self.abrir(10, 6) == '0':
-            self.process_neighbour_buttons(10, 6)
+        self.process_button(10, 6)
 
     def click_pushButtonG12(self):
-        if self.abrir(11, 6) == '0':
-            self.process_neighbour_buttons(11, 6)
+        self.process_button(11, 6)
 
     def click_pushButtonG13(self):
-        if self.abrir(12, 6) == '0':
-            self.process_neighbour_buttons(12, 6)
+        self.process_button(12, 6)
 
     def click_pushButtonG14(self):
-        if self.abrir(13, 6) == '0':
-            self.process_neighbour_buttons(13, 6)
+        self.process_button(13, 6)
 
     def click_pushButtonG15(self):
-        if self.abrir(14, 6) == '0':
-            self.process_neighbour_buttons(14, 6)
+        self.process_button(14, 6)
 
     def click_pushButtonH1(self):
-        if self.abrir(0, 7) == '0':
-            self.process_neighbour_buttons(0, 7)
+        self.process_button(0, 7)
 
     def click_pushButtonH2(self):
-        if self.abrir(1, 7) == '0':
-            self.process_neighbour_buttons(1, 7)
+        self.process_button(1, 7)
 
     def click_pushButtonH3(self):
-        if self.abrir(2, 7) == '0':
-            self.process_neighbour_buttons(2, 7)
+        self.process_button(2, 7)
 
     def click_pushButtonH4(self):
-        if self.abrir(3, 7) == '0':
-            self.process_neighbour_buttons(3, 7)
+        self.process_button(3, 7)
 
     def click_pushButtonH5(self):
-        if self.abrir(4, 7) == '0':
-            self.process_neighbour_buttons(4, 7)
+        self.process_button(4, 7)
 
     def click_pushButtonH6(self):
-        if self.abrir(5, 7) == '0':
-            self.process_neighbour_buttons(5, 7)
+        self.process_button(5, 7)
 
     def click_pushButtonH7(self):
-        if self.abrir(6, 7) == '0':
-            self.process_neighbour_buttons(6, 7)
+        self.process_button(6, 7)
 
     def click_pushButtonH8(self):
-        if self.abrir(7, 7) == '0':
-            self.process_neighbour_buttons(7, 7)
+        self.process_button(7, 7)
 
     def click_pushButtonH9(self):
-        if self.abrir(8, 7) == '0':
-            self.process_neighbour_buttons(8, 7)
+        self.process_button(8, 7)
 
     def click_pushButtonH10(self):
-        if self.abrir(9, 7) == '0':
-            self.process_neighbour_buttons(9, 7)
+        self.process_button(9, 7)
 
     def click_pushButtonH11(self):
-        if self.abrir(10, 7) == '0':
-            self.process_neighbour_buttons(10, 7)
+        self.process_button(10, 7)
 
     def click_pushButtonH12(self):
-        if self.abrir(11, 7) == '0':
-            self.process_neighbour_buttons(11, 7)
+        self.process_button(11, 7)
 
     def click_pushButtonH13(self):
-        if self.abrir(12, 7) == '0':
-            self.process_neighbour_buttons(12, 7)
+        self.process_button(12, 7)
 
     def click_pushButtonH14(self):
-        if self.abrir(13, 7) == '0':
-            self.process_neighbour_buttons(13, 7)
+        self.process_button(13, 7)
 
     def click_pushButtonH15(self):
-        if self.abrir(14, 7) == '0':
-            self.process_neighbour_buttons(14, 7)
+        self.process_button(14, 7)
 
     def click_pushButtonI1(self):
-        if self.abrir(0, 8) == '0':
-            self.process_neighbour_buttons(0, 8)
+        self.process_button(0, 8)
 
     def click_pushButtonI2(self):
-        if self.abrir(1, 8) == '0':
-            self.process_neighbour_buttons(1, 8)
+        self.process_button(1, 8)
 
     def click_pushButtonI3(self):
-        if self.abrir(2, 8) == '0':
-            self.process_neighbour_buttons(2, 8)
+        self.process_button(2, 8)
 
     def click_pushButtonI4(self):
-        if self.abrir(3, 8) == '0':
-            self.process_neighbour_buttons(3, 8)
+        self.process_button(3, 8)
 
     def click_pushButtonI5(self):
-        if self.abrir(4, 8) == '0':
-            self.process_neighbour_buttons(4, 8)
+        self.process_button(4, 8)
 
     def click_pushButtonI6(self):
-        if self.abrir(5, 8) == '0':
-            self.process_neighbour_buttons(5, 8)
+        self.process_button(5, 8)
 
     def click_pushButtonI7(self):
-        if self.abrir(6, 8) == '0':
-            self.process_neighbour_buttons(6, 8)
+        self.process_button(6, 8)
 
     def click_pushButtonI8(self):
-        if self.abrir(7, 8) == '0':
-            self.process_neighbour_buttons(7, 8)
+        self.process_button(7, 8)
 
     def click_pushButtonI9(self):
-        if self.abrir(8, 8) == '0':
-            self.process_neighbour_buttons(8, 8)
+        self.process_button(8, 8)
 
     def click_pushButtonI10(self):
-        if self.abrir(9, 8) == '0':
-            self.process_neighbour_buttons(9, 8)
+        self.process_button(9, 8)
 
     def click_pushButtonI11(self):
-        if self.abrir(10, 8) == '0':
-            self.process_neighbour_buttons(10, 8)
+        self.process_button(10, 8)
 
     def click_pushButtonI12(self):
-        if self.abrir(11, 8) == '0':
-            self.process_neighbour_buttons(11, 8)
+        self.process_button(11, 8)
 
     def click_pushButtonI13(self):
-        if self.abrir(12, 8) == '0':
-            self.process_neighbour_buttons(12, 8)
+        self.process_button(12, 8)
 
     def click_pushButtonI14(self):
-        if self.abrir(13, 8) == '0':
-            self.process_neighbour_buttons(13, 8)
+        self.process_button(13, 8)
 
     def click_pushButtonI15(self):
-        if self.abrir(14, 8) == '0':
-            self.process_neighbour_buttons(14, 8)
+        self.process_button(14, 8)
 
     def click_pushButtonJ1(self):
-        if self.abrir(0, 9) == '0':
-            self.process_neighbour_buttons(0, 9)
+        self.process_button(0, 9)
 
     def click_pushButtonJ2(self):
-        if self.abrir(1, 9) == '0':
-            self.process_neighbour_buttons(1, 9)
+        self.process_button(1, 9)
 
     def click_pushButtonJ3(self):
-        if self.abrir(2, 9) == '0':
-            self.process_neighbour_buttons(2, 9)
+        self.process_button(2, 9)
 
     def click_pushButtonJ4(self):
-        if self.abrir(3, 9) == '0':
-            self.process_neighbour_buttons(3, 9)
+        self.process_button(3, 9)
 
     def click_pushButtonJ5(self):
-        if self.abrir(4, 9) == '0':
-            self.process_neighbour_buttons(4, 9)
+        self.process_button(4, 9)
 
     def click_pushButtonJ6(self):
-        if self.abrir(5, 9) == '0':
-            self.process_neighbour_buttons(5, 9)
+        self.process_button(5, 9)
 
     def click_pushButtonJ7(self):
-        if self.abrir(6, 9) == '0':
-            self.process_neighbour_buttons(6, 9)
+        self.process_button(6, 9)
 
     def click_pushButtonJ8(self):
-        if self.abrir(7, 9) == '0':
-            self.process_neighbour_buttons(7, 9)
+        self.process_button(7, 9)
 
     def click_pushButtonJ9(self):
-        if self.abrir(8, 9) == '0':
-            self.process_neighbour_buttons(8, 9)
+        self.process_button(8, 9)
 
     def click_pushButtonJ10(self):
-        if self.abrir(9, 9) == '0':
-            self.process_neighbour_buttons(9, 9)
+        self.process_button(9, 9)
 
     def click_pushButtonJ11(self):
-        if self.abrir(10, 9) == '0':
-            self.process_neighbour_buttons(10, 9)
+        self.process_button(10, 9)
 
     def click_pushButtonJ12(self):
-        if self.abrir(11, 9) == '0':
-            self.process_neighbour_buttons(11, 9)
+        self.process_button(11, 9)
 
     def click_pushButtonJ13(self):
-        if self.abrir(12, 9) == '0':
-            self.process_neighbour_buttons(12, 9)
+        self.process_button(12, 9)
 
     def click_pushButtonJ14(self):
-        if self.abrir(13, 9) == '0':
-            self.process_neighbour_buttons(13, 9)
+        self.process_button(13, 9)
 
     def click_pushButtonJ15(self):
-        if self.abrir(14, 9) == '0':
-            self.process_neighbour_buttons(14, 9)
+        self.process_button(14, 9)
 
     def click_pushButtonK1(self):
-        if self.abrir(0, 10) == '0':
-            self.process_neighbour_buttons(0, 10)
+        self.process_button(0, 10)
 
     def click_pushButtonK2(self):
-        if self.abrir(1, 10) == '0':
-            self.process_neighbour_buttons(1, 10)
+        self.process_button(1, 10)
 
     def click_pushButtonK3(self):
-        if self.abrir(2, 10) == '0':
-            self.process_neighbour_buttons(2, 10)
+        self.process_button(2, 10)
 
     def click_pushButtonK4(self):
-        if self.abrir(3, 10) == '0':
-            self.process_neighbour_buttons(3, 10)
+        self.process_button(3, 10)
 
     def click_pushButtonK5(self):
-        if self.abrir(4, 10) == '0':
-            self.process_neighbour_buttons(4, 10)
+        self.process_button(4, 10)
 
     def click_pushButtonK6(self):
-        if self.abrir(5, 10) == '0':
-            self.process_neighbour_buttons(5, 10)
+        self.process_button(5, 10)
 
     def click_pushButtonK7(self):
-        if self.abrir(6, 10) == '0':
-            self.process_neighbour_buttons(6, 10)
+        self.process_button(6, 10)
 
     def click_pushButtonK8(self):
-        if self.abrir(7, 10) == '0':
-            self.process_neighbour_buttons(7, 10)
+        self.process_button(7, 10)
 
     def click_pushButtonK9(self):
-        if self.abrir(8, 10) == '0':
-            self.process_neighbour_buttons(8, 10)
+        self.process_button(8, 10)
 
     def click_pushButtonK10(self):
-        if self.abrir(9, 10) == '0':
-            self.process_neighbour_buttons(9, 10)
+        self.process_button(9, 10)
 
     def click_pushButtonK11(self):
-        if self.abrir(10, 10) == '0':
-            self.process_neighbour_buttons(10, 10)
+        self.process_button(10, 10)
 
     def click_pushButtonK12(self):
-        if self.abrir(11, 10) == '0':
-            self.process_neighbour_buttons(11, 10)
+        self.process_button(11, 10)
 
     def click_pushButtonK13(self):
-        if self.abrir(12, 10) == '0':
-            self.process_neighbour_buttons(12, 10)
+        self.process_button(12, 10)
 
     def click_pushButtonK14(self):
-        if self.abrir(13, 10) == '0':
-            self.process_neighbour_buttons(13, 10)
+        self.process_button(13, 10)
 
     def click_pushButtonK15(self):
-        if self.abrir(14, 10) == '0':
-            self.process_neighbour_buttons(14, 10)
+        self.process_button(14, 10)
 
     def click_pushButtonL1(self):
-        if self.abrir(0, 11) == '0':
-            self.process_neighbour_buttons(0, 11)
+        self.process_button(0, 11)
 
     def click_pushButtonL2(self):
-        if self.abrir(1, 11) == '0':
-            self.process_neighbour_buttons(1, 11)
+        self.process_button(1, 11)
 
     def click_pushButtonL3(self):
-        if self.abrir(2, 11) == '0':
-            self.process_neighbour_buttons(2, 11)
+        self.process_button(2, 11)
 
     def click_pushButtonL4(self):
-        if self.abrir(3, 11) == '0':
-            self.process_neighbour_buttons(3, 11)
+        self.process_button(3, 11)
 
     def click_pushButtonL5(self):
-        if self.abrir(4, 11) == '0':
-            self.process_neighbour_buttons(4, 11)
+        self.process_button(4, 11)
 
     def click_pushButtonL6(self):
-        if self.abrir(5, 11) == '0':
-            self.process_neighbour_buttons(5, 11)
+        self.process_button(5, 11)
 
     def click_pushButtonL7(self):
-        if self.abrir(6, 11) == '0':
-            self.process_neighbour_buttons(6, 11)
+        self.process_button(6, 11)
 
     def click_pushButtonL8(self):
-        if self.abrir(7, 11) == '0':
-            self.process_neighbour_buttons(7, 11)
+        self.process_button(7, 11)
 
     def click_pushButtonL9(self):
-        if self.abrir(8, 11) == '0':
-            self.process_neighbour_buttons(8, 11)
+        self.process_button(8, 11)
 
     def click_pushButtonL10(self):
-        if self.abrir(9, 11) == '0':
-            self.process_neighbour_buttons(9, 11)
+        self.process_button(9, 11)
 
     def click_pushButtonL11(self):
-        if self.abrir(10, 11) == '0':
-            self.process_neighbour_buttons(10, 11)
+        self.process_button(10, 11)
 
     def click_pushButtonL12(self):
-        if self.abrir(11, 11) == '0':
-            self.process_neighbour_buttons(11, 11)
+        self.process_button(11, 11)
 
     def click_pushButtonL13(self):
-        if self.abrir(12, 11) == '0':
-            self.process_neighbour_buttons(12, 11)
+        self.process_button(12, 11)
 
     def click_pushButtonL14(self):
-        if self.abrir(13, 11) == '0':
-            self.process_neighbour_buttons(13, 11)
+        self.process_button(13, 11)
 
     def click_pushButtonL15(self):
-        if self.abrir(14, 11) == '0':
-            self.process_neighbour_buttons(14, 11)
+        self.process_button(14, 11)
 
     def click_pushButtonM1(self):
-        if self.abrir(0, 12) == '0':
-            self.process_neighbour_buttons(0, 12)
+        self.process_button(0, 12)
 
     def click_pushButtonM2(self):
-        if self.abrir(1, 12) == '0':
-            self.process_neighbour_buttons(1, 12)
+        self.process_button(1, 12)
 
     def click_pushButtonM3(self):
-        if self.abrir(2, 12) == '0':
-            self.process_neighbour_buttons(2, 12)
+        self.process_button(2, 12)
 
     def click_pushButtonM4(self):
-        if self.abrir(3, 12) == '0':
-            self.process_neighbour_buttons(3, 12)
+        self.process_button(3, 12)
 
     def click_pushButtonM5(self):
-        if self.abrir(4, 12) == '0':
-            self.process_neighbour_buttons(4, 12)
+        self.process_button(4, 12)
 
     def click_pushButtonM6(self):
-        if self.abrir(5, 12) == '0':
-            self.process_neighbour_buttons(5, 12)
+        self.process_button(5, 12)
 
     def click_pushButtonM7(self):
-        if self.abrir(6, 12) == '0':
-            self.process_neighbour_buttons(6, 12)
+        self.process_button(6, 12)
 
     def click_pushButtonM8(self):
-        if self.abrir(7, 12) == '0':
-            self.process_neighbour_buttons(7, 12)
+        self.process_button(7, 12)
 
     def click_pushButtonM9(self):
-        if self.abrir(8, 12) == '0':
-            self.process_neighbour_buttons(8, 12)
+        self.process_button(8, 12)
 
     def click_pushButtonM10(self):
-        if self.abrir(9, 12) == '0':
-            self.process_neighbour_buttons(9, 12)
+        self.process_button(9, 12)
 
     def click_pushButtonM11(self):
-        if self.abrir(10, 12) == '0':
-            self.process_neighbour_buttons(10, 12)
+        self.process_button(10, 12)
 
     def click_pushButtonM12(self):
-        if self.abrir(11, 12) == '0':
-            self.process_neighbour_buttons(11, 12)
+        self.process_button(11, 12)
 
     def click_pushButtonM13(self):
-        if self.abrir(12, 12) == '0':
-            self.process_neighbour_buttons(12, 12)
+        self.process_button(12, 12)
 
     def click_pushButtonM14(self):
-        if self.abrir(13, 12) == '0':
-            self.process_neighbour_buttons(13, 12)
+        self.process_button(13, 12)
 
     def click_pushButtonM15(self):
-        if self.abrir(14, 12) == '0':
-            self.process_neighbour_buttons(14, 12)
+        self.process_button(14, 12)
 
     def click_pushButtonN1(self):
-        if self.abrir(0, 13) == '0':
-            self.process_neighbour_buttons(0, 13)
+        self.process_button(0, 13)
 
     def click_pushButtonN2(self):
-        if self.abrir(1, 13) == '0':
-            self.process_neighbour_buttons(1, 13)
+        self.process_button(1, 13)
 
     def click_pushButtonN3(self):
-        if self.abrir(2, 13) == '0':
-            self.process_neighbour_buttons(2, 13)
+        self.process_button(2, 13)
 
     def click_pushButtonN4(self):
-        if self.abrir(3, 13) == '0':
-            self.process_neighbour_buttons(3, 13)
+        self.process_button(3, 13)
 
     def click_pushButtonN5(self):
-        if self.abrir(4, 13) == '0':
-            self.process_neighbour_buttons(4, 13)
+        self.process_button(4, 13)
 
     def click_pushButtonN6(self):
-        if self.abrir(5, 13) == '0':
-            self.process_neighbour_buttons(5, 13)
+        self.process_button(5, 13)
 
     def click_pushButtonN7(self):
-        if self.abrir(6, 13) == '0':
-            self.process_neighbour_buttons(6, 13)
+        self.process_button(6, 13)
 
     def click_pushButtonN8(self):
-        if self.abrir(7, 13) == '0':
-            self.process_neighbour_buttons(7, 13)
+        self.process_button(7, 13)
 
     def click_pushButtonN9(self):
-        if self.abrir(8, 13) == '0':
-            self.process_neighbour_buttons(8, 13)
+        self.process_button(8, 13)
 
     def click_pushButtonN10(self):
-        if self.abrir(9, 13) == '0':
-            self.process_neighbour_buttons(9, 13)
+        self.process_button(9, 13)
 
     def click_pushButtonN11(self):
-        if self.abrir(10, 13) == '0':
-            self.process_neighbour_buttons(10, 13)
+        self.process_button(10, 13)
 
     def click_pushButtonN12(self):
-        if self.abrir(11, 13) == '0':
-            self.process_neighbour_buttons(11, 13)
+        self.process_button(11, 13)
 
     def click_pushButtonN13(self):
-        if self.abrir(12, 13) == '0':
-            self.process_neighbour_buttons(12, 13)
+        self.process_button(12, 13)
 
     def click_pushButtonN14(self):
-        if self.abrir(13, 13) == '0':
-            self.process_neighbour_buttons(13, 13)
+        self.process_button(13, 13)
 
     def click_pushButtonN15(self):
-        if self.abrir(14, 13) == '0':
-            self.process_neighbour_buttons(14, 13)
+        self.process_button(14, 13)
 
     def click_pushButtonO1(self):
-        if self.abrir(0, 14) == '0':
-            self.process_neighbour_buttons(0, 14)
+        self.process_button(0, 14)
 
     def click_pushButtonO2(self):
-        if self.abrir(1, 14) == '0':
-            self.process_neighbour_buttons(1, 14)
+        self.process_button(1, 14)
 
     def click_pushButtonO3(self):
-        if self.abrir(2, 14) == '0':
-            self.process_neighbour_buttons(2, 14)
+        self.process_button(2, 14)
 
     def click_pushButtonO4(self):
-        if self.abrir(3, 14) == '0':
-            self.process_neighbour_buttons(3, 14)
+        self.process_button(3, 14)
 
     def click_pushButtonO5(self):
-        if self.abrir(4, 14) == '0':
-            self.process_neighbour_buttons(4, 14)
+        self.process_button(4, 14)
 
     def click_pushButtonO6(self):
-        if self.abrir(5, 14) == '0':
-            self.process_neighbour_buttons(5, 14)
+        self.process_button(5, 14)
 
     def click_pushButtonO7(self):
-        if self.abrir(6, 14) == '0':
-            self.process_neighbour_buttons(6, 14)
+        self.process_button(6, 14)
 
     def click_pushButtonO8(self):
-        if self.abrir(7, 14) == '0':
-            self.process_neighbour_buttons(7, 14)
+        self.process_button(7, 14)
 
     def click_pushButtonO9(self):
-        if self.abrir(8, 14) == '0':
-            self.process_neighbour_buttons(8, 14)
+        self.process_button(8, 14)
 
     def click_pushButtonO10(self):
-        if self.abrir(9, 14) == '0':
-            self.process_neighbour_buttons(9, 14)
+        self.process_button(9, 14)
 
     def click_pushButtonO11(self):
-        if self.abrir(10, 14) == '0':
-            self.process_neighbour_buttons(10, 14)
+        self.process_button(10, 14)
 
     def click_pushButtonO12(self):
-        if self.abrir(11, 14) == '0':
-            self.process_neighbour_buttons(11, 14)
+        self.process_button(11, 14)
 
     def click_pushButtonO13(self):
-        if self.abrir(12, 14) == '0':
-            self.process_neighbour_buttons(12, 14)
+        self.process_button(12, 14)
 
     def click_pushButtonO14(self):
-        if self.abrir(13, 14) == '0':
-            self.process_neighbour_buttons(13, 14)
+        self.process_button(13, 14)
 
     def click_pushButtonO15(self):
-        if self.abrir(14, 14) == '0':
-            self.process_neighbour_buttons(14, 14)
+        self.process_button(14, 14)
 
-    def abrir(self, x, y):
+    def process_button(self, x, y):
         icon = self.show_image(self.board[y][x].value)
         self.board[y][x].setIcon(icon)
         self.board[y][x].setIconSize(QSize(30, 30))
         self.board[y][x].setEnabled(False)
-        return self.board[y][x].value
+        if self.board[y][x].value == '0':
+            self.process_neighbour_buttons(x ,y)
 
     def show_image(self, value):
         if value == 'b':
