@@ -29,6 +29,8 @@ class Icon(QIcon):
         self.icon_bomb_exploded.addFile("images/bomb_exploded.jpg", QSize(), QIcon.Normal, QIcon.Off)
         self.icon_flag = QIcon()
         self.icon_flag.addFile("images/flag.jpg", QSize(), QIcon.Normal, QIcon.Off)
+        self.icon_gray = QIcon()
+        self.icon_gray.addFile("images/gray2.jpg", QSize(), QIcon.Normal, QIcon.Off)
 
     def get_icon_number_1(self):
         return self.icon_number_1
@@ -62,6 +64,9 @@ class Icon(QIcon):
 
     def get_icon_bomb_exploded(self):
         return self.icon_bomb_exploded
+
+    def get_icon_gray(self):
+        return self.icon_gray
 
     def get_icon_flag(self):
         return self.icon_flag

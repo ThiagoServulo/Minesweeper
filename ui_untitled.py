@@ -1,9 +1,7 @@
 import sys
 from random import randint
 from PySide2.QtCore import *
-from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-from Button import Button
 from ButtonFlag import ButtonFlag
 from Icon import Icon
 
@@ -15,252 +13,260 @@ class Ui_MainWindow(object):
     QUANTITY_BOMBS = 40
 
     def __init__(self):
+        # Init central widget
         self.centralwidget = QWidget()
+        # Init icons
         self.icons = Icon()
+        # Init timer
+        self.time = QTime()
         # First line
-        #self.pushButtonA1 = Button()
-        #self.pushButtonA2 = Button()
-        #self.pushButtonA3 = Button()
-        self.pushButtonA4 = Button()
-        self.pushButtonA5 = Button()
-        self.pushButtonA6 = Button()
-        self.pushButtonA7 = Button()
-        self.pushButtonA8 = Button()
-        self.pushButtonA9 = Button()
-        self.pushButtonA10 = Button()
-        self.pushButtonA11 = Button()
-        self.pushButtonA12 = Button()
-        self.pushButtonA13 = Button()
-        self.pushButtonA14 = Button()
-        self.pushButtonA15 = Button()
+        self.pushButtonA1 = QPushButton()
+        self.pushButtonA2 = QPushButton()
+        self.pushButtonA3 = QPushButton()
+        self.pushButtonA4 = QPushButton()
+        self.pushButtonA5 = QPushButton()
+        self.pushButtonA6 = QPushButton()
+        self.pushButtonA7 = QPushButton()
+        self.pushButtonA8 = QPushButton()
+        self.pushButtonA9 = QPushButton()
+        self.pushButtonA10 = QPushButton()
+        self.pushButtonA11 = QPushButton()
+        self.pushButtonA12 = QPushButton()
+        self.pushButtonA13 = QPushButton()
+        self.pushButtonA14 = QPushButton()
+        self.pushButtonA15 = QPushButton()
         # Second line
-        #self.pushButtonB1 = Button()
-        #self.pushButtonB2 = Button()
-        #self.pushButtonB3 = Button()
-        self.pushButtonB4 = Button()
-        self.pushButtonB5 = Button()
-        self.pushButtonB6 = Button()
-        self.pushButtonB7 = Button()
-        self.pushButtonB8 = Button()
-        self.pushButtonB9 = Button()
-        self.pushButtonB10 = Button()
-        self.pushButtonB11 = Button()
-        self.pushButtonB12 = Button()
-        self.pushButtonB13 = Button()
-        self.pushButtonB14 = Button()
-        self.pushButtonB15 = Button()
+        self.pushButtonB1 = QPushButton()
+        self.pushButtonB2 = QPushButton()
+        self.pushButtonB3 = QPushButton()
+        self.pushButtonB4 = QPushButton()
+        self.pushButtonB5 = QPushButton()
+        self.pushButtonB6 = QPushButton()
+        self.pushButtonB7 = QPushButton()
+        self.pushButtonB8 = QPushButton()
+        self.pushButtonB9 = QPushButton()
+        self.pushButtonB10 = QPushButton()
+        self.pushButtonB11 = QPushButton()
+        self.pushButtonB12 = QPushButton()
+        self.pushButtonB13 = QPushButton()
+        self.pushButtonB14 = QPushButton()
+        self.pushButtonB15 = QPushButton()
         # Third line
-        # self.pushButtonC1 = Button()
-        # self.pushButtonC2 = Button()
-        # self.pushButtonC3 = Button()
-        self.pushButtonC4 = Button()
-        self.pushButtonC5 = Button()
-        self.pushButtonC6 = Button()
-        self.pushButtonC7 = Button()
-        self.pushButtonC8 = Button()
-        self.pushButtonC9 = Button()
-        self.pushButtonC10 = Button()
-        self.pushButtonC11 = Button()
-        self.pushButtonC12 = Button()
-        self.pushButtonC13 = Button()
-        self.pushButtonC14 = Button()
-        self.pushButtonC15 = Button()
+        self.pushButtonC1 = QPushButton()
+        self.pushButtonC2 = QPushButton()
+        self.pushButtonC3 = QPushButton()
+        self.pushButtonC4 = QPushButton()
+        self.pushButtonC5 = QPushButton()
+        self.pushButtonC6 = QPushButton()
+        self.pushButtonC7 = QPushButton()
+        self.pushButtonC8 = QPushButton()
+        self.pushButtonC9 = QPushButton()
+        self.pushButtonC10 = QPushButton()
+        self.pushButtonC11 = QPushButton()
+        self.pushButtonC12 = QPushButton()
+        self.pushButtonC13 = QPushButton()
+        self.pushButtonC14 = QPushButton()
+        self.pushButtonC15 = QPushButton()
         # Fourth line
-        self.pushButtonD1 = Button()
-        self.pushButtonD2 = Button()
-        self.pushButtonD3 = Button()
-        self.pushButtonD4 = Button()
-        self.pushButtonD5 = Button()
-        self.pushButtonD6 = Button()
-        self.pushButtonD7 = Button()
-        self.pushButtonD8 = Button()
-        self.pushButtonD9 = Button()
-        self.pushButtonD10 = Button()
-        self.pushButtonD11 = Button()
-        self.pushButtonD12 = Button()
-        self.pushButtonD13 = Button()
-        self.pushButtonD14 = Button()
-        self.pushButtonD15 = Button()
+        self.pushButtonD1 = QPushButton()
+        self.pushButtonD2 = QPushButton()
+        self.pushButtonD3 = QPushButton()
+        self.pushButtonD4 = QPushButton()
+        self.pushButtonD5 = QPushButton()
+        self.pushButtonD6 = QPushButton()
+        self.pushButtonD7 = QPushButton()
+        self.pushButtonD8 = QPushButton()
+        self.pushButtonD9 = QPushButton()
+        self.pushButtonD10 = QPushButton()
+        self.pushButtonD11 = QPushButton()
+        self.pushButtonD12 = QPushButton()
+        self.pushButtonD13 = QPushButton()
+        self.pushButtonD14 = QPushButton()
+        self.pushButtonD15 = QPushButton()
         # Fiveth line
-        self.pushButtonE1 = Button()
-        self.pushButtonE2 = Button()
-        self.pushButtonE3 = Button()
-        self.pushButtonE4 = Button()
-        self.pushButtonE5 = Button()
-        self.pushButtonE6 = Button()
-        self.pushButtonE7 = Button()
-        self.pushButtonE8 = Button()
-        self.pushButtonE9 = Button()
-        self.pushButtonE10 = Button()
-        self.pushButtonE11 = Button()
-        self.pushButtonE12 = Button()
-        self.pushButtonE13 = Button()
-        self.pushButtonE14 = Button()
-        self.pushButtonE15 = Button()
+        self.pushButtonE1 = QPushButton()
+        self.pushButtonE2 = QPushButton()
+        self.pushButtonE3 = QPushButton()
+        self.pushButtonE4 = QPushButton()
+        self.pushButtonE5 = QPushButton()
+        self.pushButtonE6 = QPushButton()
+        self.pushButtonE7 = QPushButton()
+        self.pushButtonE8 = QPushButton()
+        self.pushButtonE9 = QPushButton()
+        self.pushButtonE10 = QPushButton()
+        self.pushButtonE11 = QPushButton()
+        self.pushButtonE12 = QPushButton()
+        self.pushButtonE13 = QPushButton()
+        self.pushButtonE14 = QPushButton()
+        self.pushButtonE15 = QPushButton()
         # Sixth line
-        self.pushButtonF1 = Button()
-        self.pushButtonF2 = Button()
-        self.pushButtonF3 = Button()
-        self.pushButtonF4 = Button()
-        self.pushButtonF5 = Button()
-        self.pushButtonF6 = Button()
-        self.pushButtonF7 = Button()
-        self.pushButtonF8 = Button()
-        self.pushButtonF9 = Button()
-        self.pushButtonF10 = Button()
-        self.pushButtonF11 = Button()
-        self.pushButtonF12 = Button()
-        self.pushButtonF13 = Button()
-        self.pushButtonF14 = Button()
-        self.pushButtonF15 = Button()
+        self.pushButtonF1 = QPushButton()
+        self.pushButtonF2 = QPushButton()
+        self.pushButtonF3 = QPushButton()
+        self.pushButtonF4 = QPushButton()
+        self.pushButtonF5 = QPushButton()
+        self.pushButtonF6 = QPushButton()
+        self.pushButtonF7 = QPushButton()
+        self.pushButtonF8 = QPushButton()
+        self.pushButtonF9 = QPushButton()
+        self.pushButtonF10 = QPushButton()
+        self.pushButtonF11 = QPushButton()
+        self.pushButtonF12 = QPushButton()
+        self.pushButtonF13 = QPushButton()
+        self.pushButtonF14 = QPushButton()
+        self.pushButtonF15 = QPushButton()
         # Seventh line
-        self.pushButtonG1 = Button()
-        self.pushButtonG2 = Button()
-        self.pushButtonG3 = Button()
-        self.pushButtonG4 = Button()
-        self.pushButtonG5 = Button()
-        self.pushButtonG6 = Button()
-        self.pushButtonG7 = Button()
-        self.pushButtonG8 = Button()
-        self.pushButtonG9 = Button()
-        self.pushButtonG10 = Button()
-        self.pushButtonG11 = Button()
-        self.pushButtonG12 = Button()
-        self.pushButtonG13 = Button()
-        self.pushButtonG14 = Button()
-        self.pushButtonG15 = Button()
+        self.pushButtonG1 = QPushButton()
+        self.pushButtonG2 = QPushButton()
+        self.pushButtonG3 = QPushButton()
+        self.pushButtonG4 = QPushButton()
+        self.pushButtonG5 = QPushButton()
+        self.pushButtonG6 = QPushButton()
+        self.pushButtonG7 = QPushButton()
+        self.pushButtonG8 = QPushButton()
+        self.pushButtonG9 = QPushButton()
+        self.pushButtonG10 = QPushButton()
+        self.pushButtonG11 = QPushButton()
+        self.pushButtonG12 = QPushButton()
+        self.pushButtonG13 = QPushButton()
+        self.pushButtonG14 = QPushButton()
+        self.pushButtonG15 = QPushButton()
         # Eighth line
-        self.pushButtonH1 = Button()
-        self.pushButtonH2 = Button()
-        self.pushButtonH3 = Button()
-        self.pushButtonH4 = Button()
-        self.pushButtonH5 = Button()
-        self.pushButtonH6 = Button()
-        self.pushButtonH7 = Button()
-        self.pushButtonH8 = Button()
-        self.pushButtonH9 = Button()
-        self.pushButtonH10 = Button()
-        self.pushButtonH11 = Button()
-        self.pushButtonH12 = Button()
-        self.pushButtonH13 = Button()
-        self.pushButtonH14 = Button()
-        self.pushButtonH15 = Button()
+        self.pushButtonH1 = QPushButton()
+        self.pushButtonH2 = QPushButton()
+        self.pushButtonH3 = QPushButton()
+        self.pushButtonH4 = QPushButton()
+        self.pushButtonH5 = QPushButton()
+        self.pushButtonH6 = QPushButton()
+        self.pushButtonH7 = QPushButton()
+        self.pushButtonH8 = QPushButton()
+        self.pushButtonH9 = QPushButton()
+        self.pushButtonH10 = QPushButton()
+        self.pushButtonH11 = QPushButton()
+        self.pushButtonH12 = QPushButton()
+        self.pushButtonH13 = QPushButton()
+        self.pushButtonH14 = QPushButton()
+        self.pushButtonH15 = QPushButton()
         # Nineth line
-        self.pushButtonI1 = Button()
-        self.pushButtonI2 = Button()
-        self.pushButtonI3 = Button()
-        self.pushButtonI4 = Button()
-        self.pushButtonI5 = Button()
-        self.pushButtonI6 = Button()
-        self.pushButtonI7 = Button()
-        self.pushButtonI8 = Button()
-        self.pushButtonI9 = Button()
-        self.pushButtonI10 = Button()
-        self.pushButtonI11 = Button()
-        self.pushButtonI12 = Button()
-        self.pushButtonI13 = Button()
-        self.pushButtonI14 = Button()
-        self.pushButtonI15 = Button()
+        self.pushButtonI1 = QPushButton()
+        self.pushButtonI2 = QPushButton()
+        self.pushButtonI3 = QPushButton()
+        self.pushButtonI4 = QPushButton()
+        self.pushButtonI5 = QPushButton()
+        self.pushButtonI6 = QPushButton()
+        self.pushButtonI7 = QPushButton()
+        self.pushButtonI8 = QPushButton()
+        self.pushButtonI9 = QPushButton()
+        self.pushButtonI10 = QPushButton()
+        self.pushButtonI11 = QPushButton()
+        self.pushButtonI12 = QPushButton()
+        self.pushButtonI13 = QPushButton()
+        self.pushButtonI14 = QPushButton()
+        self.pushButtonI15 = QPushButton()
         # Tenth line
-        self.pushButtonJ1 = Button()
-        self.pushButtonJ2 = Button()
-        self.pushButtonJ3 = Button()
-        self.pushButtonJ4 = Button()
-        self.pushButtonJ5 = Button()
-        self.pushButtonJ6 = Button()
-        self.pushButtonJ7 = Button()
-        self.pushButtonJ8 = Button()
-        self.pushButtonJ9 = Button()
-        self.pushButtonJ10 = Button()
-        self.pushButtonJ11 = Button()
-        self.pushButtonJ12 = Button()
-        self.pushButtonJ13 = Button()
-        self.pushButtonJ14 = Button()
-        self.pushButtonJ15 = Button()
+        self.pushButtonJ1 = QPushButton()
+        self.pushButtonJ2 = QPushButton()
+        self.pushButtonJ3 = QPushButton()
+        self.pushButtonJ4 = QPushButton()
+        self.pushButtonJ5 = QPushButton()
+        self.pushButtonJ6 = QPushButton()
+        self.pushButtonJ7 = QPushButton()
+        self.pushButtonJ8 = QPushButton()
+        self.pushButtonJ9 = QPushButton()
+        self.pushButtonJ10 = QPushButton()
+        self.pushButtonJ11 = QPushButton()
+        self.pushButtonJ12 = QPushButton()
+        self.pushButtonJ13 = QPushButton()
+        self.pushButtonJ14 = QPushButton()
+        self.pushButtonJ15 = QPushButton()
         # Eleventh line
-        self.pushButtonK1 = Button()
-        self.pushButtonK2 = Button()
-        self.pushButtonK3 = Button()
-        self.pushButtonK4 = Button()
-        self.pushButtonK5 = Button()
-        self.pushButtonK6 = Button()
-        self.pushButtonK7 = Button()
-        self.pushButtonK8 = Button()
-        self.pushButtonK9 = Button()
-        self.pushButtonK10 = Button()
-        self.pushButtonK11 = Button()
-        self.pushButtonK12 = Button()
-        self.pushButtonK13 = Button()
-        self.pushButtonK14 = Button()
-        self.pushButtonK15 = Button()
+        self.pushButtonK1 = QPushButton()
+        self.pushButtonK2 = QPushButton()
+        self.pushButtonK3 = QPushButton()
+        self.pushButtonK4 = QPushButton()
+        self.pushButtonK5 = QPushButton()
+        self.pushButtonK6 = QPushButton()
+        self.pushButtonK7 = QPushButton()
+        self.pushButtonK8 = QPushButton()
+        self.pushButtonK9 = QPushButton()
+        self.pushButtonK10 = QPushButton()
+        self.pushButtonK11 = QPushButton()
+        self.pushButtonK12 = QPushButton()
+        self.pushButtonK13 = QPushButton()
+        self.pushButtonK14 = QPushButton()
+        self.pushButtonK15 = QPushButton()
         # Twelveth line
-        self.pushButtonL1 = Button()
-        self.pushButtonL2 = Button()
-        self.pushButtonL3 = Button()
-        self.pushButtonL4 = Button()
-        self.pushButtonL5 = Button()
-        self.pushButtonL6 = Button()
-        self.pushButtonL7 = Button()
-        self.pushButtonL8 = Button()
-        self.pushButtonL9 = Button()
-        self.pushButtonL10 = Button()
-        self.pushButtonL11 = Button()
-        self.pushButtonL12 = Button()
-        self.pushButtonL13 = Button()
-        self.pushButtonL14 = Button()
-        self.pushButtonL15 = Button()
+        self.pushButtonL1 = QPushButton()
+        self.pushButtonL2 = QPushButton()
+        self.pushButtonL3 = QPushButton()
+        self.pushButtonL4 = QPushButton()
+        self.pushButtonL5 = QPushButton()
+        self.pushButtonL6 = QPushButton()
+        self.pushButtonL7 = QPushButton()
+        self.pushButtonL8 = QPushButton()
+        self.pushButtonL9 = QPushButton()
+        self.pushButtonL10 = QPushButton()
+        self.pushButtonL11 = QPushButton()
+        self.pushButtonL12 = QPushButton()
+        self.pushButtonL13 = QPushButton()
+        self.pushButtonL14 = QPushButton()
+        self.pushButtonL15 = QPushButton()
         # Thirteenth line
-        self.pushButtonM1 = Button()
-        self.pushButtonM2 = Button()
-        self.pushButtonM3 = Button()
-        self.pushButtonM4 = Button()
-        self.pushButtonM5 = Button()
-        self.pushButtonM6 = Button()
-        self.pushButtonM7 = Button()
-        self.pushButtonM8 = Button()
-        self.pushButtonM9 = Button()
-        self.pushButtonM10 = Button()
-        self.pushButtonM11 = Button()
-        self.pushButtonM12 = Button()
-        self.pushButtonM13 = Button()
-        self.pushButtonM14 = Button()
-        self.pushButtonM15 = Button()
+        self.pushButtonM1 = QPushButton()
+        self.pushButtonM2 = QPushButton()
+        self.pushButtonM3 = QPushButton()
+        self.pushButtonM4 = QPushButton()
+        self.pushButtonM5 = QPushButton()
+        self.pushButtonM6 = QPushButton()
+        self.pushButtonM7 = QPushButton()
+        self.pushButtonM8 = QPushButton()
+        self.pushButtonM9 = QPushButton()
+        self.pushButtonM10 = QPushButton()
+        self.pushButtonM11 = QPushButton()
+        self.pushButtonM12 = QPushButton()
+        self.pushButtonM13 = QPushButton()
+        self.pushButtonM14 = QPushButton()
+        self.pushButtonM15 = QPushButton()
         # Fourteenth line
-        self.pushButtonN1 = Button()
-        self.pushButtonN2 = Button()
-        self.pushButtonN3 = Button()
-        self.pushButtonN4 = Button()
-        self.pushButtonN5 = Button()
-        self.pushButtonN6 = Button()
-        self.pushButtonN7 = Button()
-        self.pushButtonN8 = Button()
-        self.pushButtonN9 = Button()
-        self.pushButtonN10 = Button()
-        self.pushButtonN11 = Button()
-        self.pushButtonN12 = Button()
-        self.pushButtonN13 = Button()
-        self.pushButtonN14 = Button()
-        self.pushButtonN15 = Button()
+        self.pushButtonN1 = QPushButton()
+        self.pushButtonN2 = QPushButton()
+        self.pushButtonN3 = QPushButton()
+        self.pushButtonN4 = QPushButton()
+        self.pushButtonN5 = QPushButton()
+        self.pushButtonN6 = QPushButton()
+        self.pushButtonN7 = QPushButton()
+        self.pushButtonN8 = QPushButton()
+        self.pushButtonN9 = QPushButton()
+        self.pushButtonN10 = QPushButton()
+        self.pushButtonN11 = QPushButton()
+        self.pushButtonN12 = QPushButton()
+        self.pushButtonN13 = QPushButton()
+        self.pushButtonN14 = QPushButton()
+        self.pushButtonN15 = QPushButton()
         # Fiveteenth line
-        self.pushButtonO1 = Button()
-        self.pushButtonO2 = Button()
-        self.pushButtonO3 = Button()
-        self.pushButtonO4 = Button()
-        self.pushButtonO5 = Button()
-        self.pushButtonO6 = Button()
-        self.pushButtonO7 = Button()
-        self.pushButtonO8 = Button()
-        self.pushButtonO9 = Button()
-        self.pushButtonO10 = Button()
-        self.pushButtonO11 = Button()
-        self.pushButtonO12 = Button()
-        self.pushButtonO13 = Button()
-        self.pushButtonO14 = Button()
-        self.pushButtonO15 = Button()
-        # Create board
+        self.pushButtonO1 = QPushButton()
+        self.pushButtonO2 = QPushButton()
+        self.pushButtonO3 = QPushButton()
+        self.pushButtonO4 = QPushButton()
+        self.pushButtonO5 = QPushButton()
+        self.pushButtonO6 = QPushButton()
+        self.pushButtonO7 = QPushButton()
+        self.pushButtonO8 = QPushButton()
+        self.pushButtonO9 = QPushButton()
+        self.pushButtonO10 = QPushButton()
+        self.pushButtonO11 = QPushButton()
+        self.pushButtonO12 = QPushButton()
+        self.pushButtonO13 = QPushButton()
+        self.pushButtonO14 = QPushButton()
+        self.pushButtonO15 = QPushButton()
+        # Init list button functions
+        self.function_click_buttons = []
+        # Init board
         self.board = []
-        # Button flag
+        # Init button flag
         self.pushButtonFlag = ButtonFlag()
+        # Init label flag
+        self.flag_label = QLabel()
 
     def create_board(self):
         self.board = \
@@ -308,14 +314,81 @@ class Ui_MainWindow(object):
               self.pushButtonN11, self.pushButtonN12, self.pushButtonN13, self.pushButtonN14, self.pushButtonN15],
              [self.pushButtonO1, self.pushButtonO2, self.pushButtonO3, self.pushButtonO4, self.pushButtonO5,
               self.pushButtonO6, self.pushButtonO7, self.pushButtonO8, self.pushButtonO9, self.pushButtonO10,
-              self.pushButtonO11, self.pushButtonO12, self.pushButtonO13, self.pushButtonO14, self.pushButtonO15]
-             ]
+              self.pushButtonO11, self.pushButtonO12, self.pushButtonO13, self.pushButtonO14, self.pushButtonO15]]
+
+    def create_button_functions(self):
+        self.function_click_buttons = \
+            [[self.click_pushButtonA1, self.click_pushButtonA2, self.click_pushButtonA3, self.click_pushButtonA4,
+              self.click_pushButtonA5, self.click_pushButtonA6, self.click_pushButtonA7, self.click_pushButtonA8,
+              self.click_pushButtonA9, self.click_pushButtonA10, self.click_pushButtonA11, self.click_pushButtonA12,
+              self.click_pushButtonA13, self.click_pushButtonA14, self.click_pushButtonA15],
+             [self.click_pushButtonB1, self.click_pushButtonB2, self.click_pushButtonB3, self.click_pushButtonB4,
+              self.click_pushButtonB5, self.click_pushButtonB6, self.click_pushButtonB7, self.click_pushButtonB8,
+              self.click_pushButtonB9, self.click_pushButtonB10, self.click_pushButtonB11, self.click_pushButtonB12,
+              self.click_pushButtonB13, self.click_pushButtonB14, self.click_pushButtonB15],
+             [self.click_pushButtonC1, self.click_pushButtonC2, self.click_pushButtonC3, self.click_pushButtonC4,
+              self.click_pushButtonC5, self.click_pushButtonC6, self.click_pushButtonC7, self.click_pushButtonC8,
+              self.click_pushButtonC9, self.click_pushButtonC10, self.click_pushButtonC11, self.click_pushButtonC12,
+              self.click_pushButtonC13, self.click_pushButtonC14, self.click_pushButtonC15],
+             [self.click_pushButtonD1, self.click_pushButtonD2, self.click_pushButtonD3, self.click_pushButtonD4,
+              self.click_pushButtonD5, self.click_pushButtonD6, self.click_pushButtonD7, self.click_pushButtonD8,
+              self.click_pushButtonD9, self.click_pushButtonD10, self.click_pushButtonD11, self.click_pushButtonD12,
+              self.click_pushButtonD13, self.click_pushButtonD14, self.click_pushButtonD15],
+             [self.click_pushButtonE1, self.click_pushButtonE2, self.click_pushButtonE3, self.click_pushButtonE4,
+              self.click_pushButtonE5, self.click_pushButtonE6, self.click_pushButtonE7, self.click_pushButtonE8,
+              self.click_pushButtonE9, self.click_pushButtonE10, self.click_pushButtonE11, self.click_pushButtonE12,
+              self.click_pushButtonE13, self.click_pushButtonE14, self.click_pushButtonE15],
+             [self.click_pushButtonF1, self.click_pushButtonF2, self.click_pushButtonF3, self.click_pushButtonF4,
+              self.click_pushButtonF5, self.click_pushButtonF6, self.click_pushButtonF7, self.click_pushButtonF8,
+              self.click_pushButtonF9, self.click_pushButtonF10, self.click_pushButtonF11, self.click_pushButtonF12,
+              self.click_pushButtonF13, self.click_pushButtonF14, self.click_pushButtonF15],
+             [self.click_pushButtonG1, self.click_pushButtonG2, self.click_pushButtonG3, self.click_pushButtonG4,
+              self.click_pushButtonG5, self.click_pushButtonG6, self.click_pushButtonG7, self.click_pushButtonG8,
+              self.click_pushButtonG9, self.click_pushButtonG10, self.click_pushButtonG11, self.click_pushButtonG12,
+              self.click_pushButtonG13, self.click_pushButtonG14, self.click_pushButtonG15],
+             [self.click_pushButtonH1, self.click_pushButtonH2, self.click_pushButtonH3, self.click_pushButtonH4,
+              self.click_pushButtonH5, self.click_pushButtonH6, self.click_pushButtonH7, self.click_pushButtonH8,
+              self.click_pushButtonH9, self.click_pushButtonH10, self.click_pushButtonH11, self.click_pushButtonH12,
+              self.click_pushButtonH13, self.click_pushButtonH14, self.click_pushButtonH15],
+             [self.click_pushButtonI1, self.click_pushButtonI2, self.click_pushButtonI3, self.click_pushButtonI4,
+              self.click_pushButtonI5, self.click_pushButtonI6, self.click_pushButtonI7, self.click_pushButtonI8,
+              self.click_pushButtonI9, self.click_pushButtonI10, self.click_pushButtonI11, self.click_pushButtonI12,
+              self.click_pushButtonI13, self.click_pushButtonI14, self.click_pushButtonI15],
+             [self.click_pushButtonJ1, self.click_pushButtonJ2, self.click_pushButtonJ3, self.click_pushButtonJ4,
+              self.click_pushButtonJ5, self.click_pushButtonJ6, self.click_pushButtonJ7, self.click_pushButtonJ8,
+              self.click_pushButtonJ9, self.click_pushButtonJ10, self.click_pushButtonJ11, self.click_pushButtonJ12,
+              self.click_pushButtonJ13, self.click_pushButtonJ14, self.click_pushButtonJ15],
+             [self.click_pushButtonK1, self.click_pushButtonK2, self.click_pushButtonK3, self.click_pushButtonK4,
+              self.click_pushButtonK5, self.click_pushButtonK6, self.click_pushButtonK7, self.click_pushButtonK8,
+              self.click_pushButtonK9, self.click_pushButtonK10, self.click_pushButtonK11, self.click_pushButtonK12,
+              self.click_pushButtonK13, self.click_pushButtonK14, self.click_pushButtonK15],
+             [self.click_pushButtonL1, self.click_pushButtonL2, self.click_pushButtonL3, self.click_pushButtonL4,
+              self.click_pushButtonL5, self.click_pushButtonL6, self.click_pushButtonL7, self.click_pushButtonL8,
+              self.click_pushButtonL9, self.click_pushButtonL10, self.click_pushButtonL11, self.click_pushButtonL12,
+              self.click_pushButtonL13, self.click_pushButtonL14, self.click_pushButtonL15],
+             [self.click_pushButtonM1, self.click_pushButtonM2, self.click_pushButtonM3, self.click_pushButtonM4,
+              self.click_pushButtonM5, self.click_pushButtonM6, self.click_pushButtonM7, self.click_pushButtonM8,
+              self.click_pushButtonM9, self.click_pushButtonM10, self.click_pushButtonM11, self.click_pushButtonM12,
+              self.click_pushButtonM13, self.click_pushButtonM14, self.click_pushButtonM15],
+             [self.click_pushButtonN1, self.click_pushButtonN2, self.click_pushButtonN3, self.click_pushButtonN4,
+              self.click_pushButtonN5, self.click_pushButtonN6, self.click_pushButtonN7, self.click_pushButtonN8,
+              self.click_pushButtonN9, self.click_pushButtonN10, self.click_pushButtonN11, self.click_pushButtonN12,
+              self.click_pushButtonN13, self.click_pushButtonN14, self.click_pushButtonN15],
+             [self.click_pushButtonO1, self.click_pushButtonO2, self.click_pushButtonO3, self.click_pushButtonO4,
+              self.click_pushButtonO5, self.click_pushButtonO6, self.click_pushButtonO7, self.click_pushButtonO8,
+              self.click_pushButtonO9, self.click_pushButtonO10, self.click_pushButtonO11, self.click_pushButtonO12,
+              self.click_pushButtonO13, self.click_pushButtonO14, self.click_pushButtonO15]]
+        for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
+            for j in range(Ui_MainWindow.LENGTH_AXIS_X):
+                self.board[i][j].clicked.connect(self.function_click_buttons[i][j])
 
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName(u"MainWindow")
+        # Create main window
         MainWindow.resize(800, 600)
+        # Create central widget
         self.centralwidget = QWidget()
-        self.centralwidget.setObjectName(u"centralwidget")
+        # Create icons
+        self.icons = Icon()
         # First line
         self.pushButtonA1 = QPushButton(self.centralwidget)
         self.pushButtonA1.setGeometry(QRect(10, 30, 30, 30))
@@ -781,86 +854,44 @@ class Ui_MainWindow(object):
         self.pushButtonO14.setGeometry(QRect(400, 450, 30, 30))
         self.pushButtonO15 = QPushButton(self.centralwidget)
         self.pushButtonO15.setGeometry(QRect(430, 450, 30, 30))
-
-        self.pushButtonFlag = ButtonFlag(self.centralwidget, QRect(460, 450, 30, 30))
-
+        # Button flag
+        self.pushButtonFlag = QPushButton(self.centralwidget)
+        self.pushButtonFlag.setGeometry(QRect(460, 450, 30, 30))
+        self.pushButtonFlag.status = False
+        self.pushButtonFlag.clicked.connect(self.toggle_flag_status)
+        self.pushButtonFlag.setIcon(self.icons.get_icon_flag())
+        self.pushButtonFlag.setIconSize(QSize(28, 28))
+        # Create flag label
+        self.flag_label = QLabel(self.centralwidget)
+        self.flag_label.setGeometry(QRect(60, 500, 81, 16))
+        self.flag_label.setText("Flag OFF")
+        # Create central widget
         MainWindow.setCentralWidget(self.centralwidget)
+        # Create board
         self.create_board()
-        self.icons = Icon()
         self.erase_board()
+        # Create button fucntions
+        self.create_button_functions()
+        # Raffle buttons
         self.bombs_position_raffle()
+        # Init other fields
         self.define_other_fields()
+        # Create timer
+        self.time = QTime(0, 0, 0)
+        timer = QTimer(self)
+        timer.start(1000)
+        timer.timeout.connect(self.timer_event)
 
-        self.function_click_buttons = \
-            [[self.click_pushButtonA1, self.click_pushButtonA2, self.click_pushButtonA3, self.click_pushButtonA4,
-              self.click_pushButtonA5, self.click_pushButtonA6, self.click_pushButtonA7, self.click_pushButtonA8,
-              self.click_pushButtonA9, self.click_pushButtonA10, self.click_pushButtonA11, self.click_pushButtonA12,
-              self.click_pushButtonA13, self.click_pushButtonA14, self.click_pushButtonA15],
-             [self.click_pushButtonB1, self.click_pushButtonB2, self.click_pushButtonB3, self.click_pushButtonB4,
-              self.click_pushButtonB5, self.click_pushButtonB6, self.click_pushButtonB7, self.click_pushButtonB8,
-              self.click_pushButtonB9, self.click_pushButtonB10, self.click_pushButtonB11, self.click_pushButtonB12,
-              self.click_pushButtonB13, self.click_pushButtonB14, self.click_pushButtonB15],
-             [self.click_pushButtonC1, self.click_pushButtonC2, self.click_pushButtonC3, self.click_pushButtonC4,
-              self.click_pushButtonC5, self.click_pushButtonC6, self.click_pushButtonC7, self.click_pushButtonC8,
-              self.click_pushButtonC9, self.click_pushButtonC10, self.click_pushButtonC11, self.click_pushButtonC12,
-              self.click_pushButtonC13, self.click_pushButtonC14, self.click_pushButtonC15],
-             [self.click_pushButtonD1, self.click_pushButtonD2, self.click_pushButtonD3, self.click_pushButtonD4,
-              self.click_pushButtonD5, self.click_pushButtonD6, self.click_pushButtonD7, self.click_pushButtonD8,
-              self.click_pushButtonD9, self.click_pushButtonD10, self.click_pushButtonD11, self.click_pushButtonD12,
-              self.click_pushButtonD13, self.click_pushButtonD14, self.click_pushButtonD15],
-             [self.click_pushButtonE1, self.click_pushButtonE2, self.click_pushButtonE3, self.click_pushButtonE4,
-              self.click_pushButtonE5, self.click_pushButtonE6, self.click_pushButtonE7, self.click_pushButtonE8,
-              self.click_pushButtonE9, self.click_pushButtonE10, self.click_pushButtonE11, self.click_pushButtonE12,
-              self.click_pushButtonE13, self.click_pushButtonE14, self.click_pushButtonE15],
-             [self.click_pushButtonF1, self.click_pushButtonF2, self.click_pushButtonF3, self.click_pushButtonF4,
-              self.click_pushButtonF5, self.click_pushButtonF6, self.click_pushButtonF7, self.click_pushButtonF8,
-              self.click_pushButtonF9, self.click_pushButtonF10, self.click_pushButtonF11, self.click_pushButtonF12,
-              self.click_pushButtonF13, self.click_pushButtonF14, self.click_pushButtonF15],
-             [self.click_pushButtonG1, self.click_pushButtonG2, self.click_pushButtonG3, self.click_pushButtonG4,
-              self.click_pushButtonG5, self.click_pushButtonG6, self.click_pushButtonG7, self.click_pushButtonG8,
-              self.click_pushButtonG9, self.click_pushButtonG10, self.click_pushButtonG11, self.click_pushButtonG12,
-              self.click_pushButtonG13, self.click_pushButtonG14, self.click_pushButtonG15],
-             [self.click_pushButtonH1, self.click_pushButtonH2, self.click_pushButtonH3, self.click_pushButtonH4,
-              self.click_pushButtonH5, self.click_pushButtonH6, self.click_pushButtonH7, self.click_pushButtonH8,
-              self.click_pushButtonH9, self.click_pushButtonH10, self.click_pushButtonH11, self.click_pushButtonH12,
-              self.click_pushButtonH13, self.click_pushButtonH14, self.click_pushButtonH15],
-             [self.click_pushButtonI1, self.click_pushButtonI2, self.click_pushButtonI3, self.click_pushButtonI4,
-              self.click_pushButtonI5, self.click_pushButtonI6, self.click_pushButtonI7, self.click_pushButtonI8,
-              self.click_pushButtonI9, self.click_pushButtonI10, self.click_pushButtonI11, self.click_pushButtonI12,
-              self.click_pushButtonI13, self.click_pushButtonI14, self.click_pushButtonI15],
-             [self.click_pushButtonJ1, self.click_pushButtonJ2, self.click_pushButtonJ3, self.click_pushButtonJ4,
-              self.click_pushButtonJ5, self.click_pushButtonJ6, self.click_pushButtonJ7, self.click_pushButtonJ8,
-              self.click_pushButtonJ9, self.click_pushButtonJ10, self.click_pushButtonJ11, self.click_pushButtonJ12,
-              self.click_pushButtonJ13, self.click_pushButtonJ14, self.click_pushButtonJ15],
-             [self.click_pushButtonK1, self.click_pushButtonK2, self.click_pushButtonK3, self.click_pushButtonK4,
-              self.click_pushButtonK5, self.click_pushButtonK6, self.click_pushButtonK7, self.click_pushButtonK8,
-              self.click_pushButtonK9, self.click_pushButtonK10, self.click_pushButtonK11, self.click_pushButtonK12,
-              self.click_pushButtonK13, self.click_pushButtonK14, self.click_pushButtonK15],
-             [self.click_pushButtonL1, self.click_pushButtonL2, self.click_pushButtonL3, self.click_pushButtonL4,
-              self.click_pushButtonL5, self.click_pushButtonL6, self.click_pushButtonL7, self.click_pushButtonL8,
-              self.click_pushButtonL9, self.click_pushButtonL10, self.click_pushButtonL11, self.click_pushButtonL12,
-              self.click_pushButtonL13, self.click_pushButtonL14, self.click_pushButtonL15],
-             [self.click_pushButtonM1, self.click_pushButtonM2, self.click_pushButtonM3, self.click_pushButtonM4,
-              self.click_pushButtonM5, self.click_pushButtonM6, self.click_pushButtonM7, self.click_pushButtonM8,
-              self.click_pushButtonM9, self.click_pushButtonM10, self.click_pushButtonM11, self.click_pushButtonM12,
-              self.click_pushButtonM13, self.click_pushButtonM14, self.click_pushButtonM15],
-             [self.click_pushButtonN1, self.click_pushButtonN2, self.click_pushButtonN3, self.click_pushButtonN4,
-              self.click_pushButtonN5, self.click_pushButtonN6, self.click_pushButtonN7, self.click_pushButtonN8,
-              self.click_pushButtonN9, self.click_pushButtonN10, self.click_pushButtonN11, self.click_pushButtonN12,
-              self.click_pushButtonN13, self.click_pushButtonN14, self.click_pushButtonN15],
-             [self.click_pushButtonO1, self.click_pushButtonO2, self.click_pushButtonO3, self.click_pushButtonO4,
-              self.click_pushButtonO5, self.click_pushButtonO6, self.click_pushButtonO7, self.click_pushButtonO8,
-              self.click_pushButtonO9, self.click_pushButtonO10, self.click_pushButtonO11, self.click_pushButtonO12,
-              self.click_pushButtonO13, self.click_pushButtonO14, self.click_pushButtonO15]]
-
-        for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
-            for j in range(Ui_MainWindow.LENGTH_AXIS_X):
-                self.board[i][j].clicked.connect(self.function_click_buttons[i][j])
 
     def erase_board(self):
         for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
             for j in range(Ui_MainWindow.LENGTH_AXIS_X):
                 self.board[i][j].value = '0'
+                icon = self.show_image('g')
+                self.board[i][j].setIcon(icon)
+                self.board[i][j].setIconSize(QSize(28, 28))
+                self.board[i][j].is_flag = False
+                self.board[i][j].setCheckable(True)
 
     def get_range_limits(self, x, y):
         x_min = 0 if x - 1 < 0 else x - 1
@@ -873,7 +904,7 @@ class Ui_MainWindow(object):
         x_min, x_max, y_min, y_max = self.get_range_limits(x, y)
         for i in range(x_min, x_max):
             for j in range(y_min, y_max):
-                if self.board[j][i].isEnabled():
+                if self.board[j][i].isCheckable():
                     self.function_click_buttons[j][i]()
 
     def click_pushButtonA1(self):
@@ -1552,13 +1583,27 @@ class Ui_MainWindow(object):
         self.process_button(14, 14)
 
     def process_button(self, x, y):
+        if not self.board[y][x].isCheckable():
+            return
+        if self.pushButtonFlag.status:
+            if self.board[y][x].is_flag:
+                icon = self.show_image('g')
+                self.board[y][x].is_flag = False
+            else:
+                icon = self.show_image('f')
+                self.board[y][x].is_flag = True
+            self.board[y][x].setIcon(icon)
+            self.board[y][x].setIconSize(QSize(28, 28))
+            return
+        if self.board[y][x].is_flag:
+            return
         icon = self.show_image(self.board[y][x].value)
+        self.board[y][x].setCheckable(False)
         self.board[y][x].setIcon(icon)
-        self.board[y][x].setIconSize(QSize(30, 30))
-        self.board[y][x].setEnabled(False)
+        self.board[y][x].setIconSize(QSize(28, 28))
         if self.board[y][x].value == 'b':
             self.end_game()
-        if self.board[y][x].value == '0':
+        elif self.board[y][x].value == '0':
             self.process_neighbour_buttons(x, y)
 
     def show_image(self, value):
@@ -1584,6 +1629,10 @@ class Ui_MainWindow(object):
             icon = self.icons.get_icon_number_7()
         elif value == '8':
             icon = self.icons.get_icon_number_8()
+        elif value == 'f':
+            icon = self.icons.get_icon_flag()
+        elif value == 'g':
+            icon = self.icons.get_icon_gray()
         else:
             raise "Invalid value"
         return icon
@@ -1614,6 +1663,15 @@ class Ui_MainWindow(object):
         msgBox = QMessageBox()
         msgBox.setText("Fim de jogo. Você perdeu")
         msgBox.exec()
+
+    def toggle_flag_status(self):
+        self.pushButtonFlag.status = True if self.pushButtonFlag.status == False else False
+        self.flag_label.setText("Flag OFF" if self.pushButtonFlag.status == False else "Flag ON")
+
+    def timer_event(self):
+        self.time = self.time.addSecs(1)
+        print(self.time.toString("hh:mm:ss"))
+
 
 class CriarTelaPrincipal(QMainWindow, Ui_MainWindow):
     def __init__(self):
