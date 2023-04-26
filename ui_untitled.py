@@ -1,5 +1,8 @@
 import sys
 from random import randint
+
+from PySide2 import QtCore
+from PySide2.QtGui import QCursor, QMouseEvent
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
 from ButtonFlag import ButtonFlag
@@ -7,7 +10,7 @@ from Icon import Icon
 
 
 class Ui_MainWindow(object):
-    # Constants
+     # Constants
     LENGTH_AXIS_X = 15
     LENGTH_AXIS_Y = 15
     QUANTITY_BOMBS = 40
@@ -22,6 +25,7 @@ class Ui_MainWindow(object):
         self.icons = Icon()
         # Init label bombs
         self.bombs_label = QLabel()
+        self.buttons_flagged = 0
         # Init timer
         self.time = QTime()
         self.timer_label = QLabel()
@@ -864,38 +868,27 @@ class Ui_MainWindow(object):
         # Button flag
         self.pushButtonFlag = QPushButton(self.centralwidget)
         self.pushButtonFlag.setGeometry(QRect(460, 450, 30, 30))
-        self.pushButtonFlag.status = False
         self.pushButtonFlag.clicked.connect(self.toggle_flag_status)
         self.pushButtonFlag.setIcon(self.icons.get_icon_flag())
         self.pushButtonFlag.setIconSize(QSize(28, 28))
+        # Create timer
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.timer_event)
+        self.timer_label = QLabel(self.centralwidget)
+        self.timer_label.setGeometry(QRect(120, 500, 81, 16))
         # Create flag label
         self.flag_label = QLabel(self.centralwidget)
         self.flag_label.setGeometry(QRect(60, 500, 81, 16))
-        self.flag_label.setText("Flag OFF")
-        self.buttons_flagged = 0
         # Create central widget
         MainWindow.setCentralWidget(self.centralwidget)
         # Create board
         self.create_board()
-        self.erase_board()
         # Create button fucntions
         self.create_button_functions()
-        # Raffle buttons
-        self.bombs_position_raffle()
-        # Init other fields
-        self.define_other_fields()
-        # Create timer
-        self.time = QTime(0, 0, 0)
-        self.timer = QTimer(self)
-        self.timer.start(1000)
-        self.timer.timeout.connect(self.timer_event)
-        self.timer_label = QLabel(self.centralwidget)
-        self.timer_label.setGeometry(QRect(120, 500, 81, 16))
-        self.timer_label.setText("00:00:00")
         # Create flag label
         self.bombs_label = QLabel(self.centralwidget)
         self.bombs_label.setGeometry(QRect(180, 500, 81, 16))
-        self.bombs_label.setText(f"{self.buttons_flagged}/{Ui_MainWindow.QUANTITY_BOMBS}")
+        self.init_game_configs()
 
     def erase_board(self):
         for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
@@ -1596,6 +1589,21 @@ class Ui_MainWindow(object):
     def click_pushButtonO15(self):
         self.process_button(14, 14)
 
+    def init_game_configs(self):
+        self.buttons_flagged = 0
+        self.flag_label.setText("Flag OFF")
+        self.pushButtonFlag.status = False
+        self.erase_board()
+        # Raffle buttons
+        self.bombs_position_raffle()
+        # Init other fields
+        self.define_other_fields()
+        self.time = QTime(0, 0, 0)
+        self.timer.start(1000)
+        self.timer_label.setText("00:00:00")
+        self.bombs_label.setText(f"{self.buttons_flagged}/{Ui_MainWindow.QUANTITY_BOMBS}")
+        self.centralwidget.setCursor(QCursor(QtCore.Qt.CustomCursor))
+
     def process_button(self, x, y):
         if not self.board[y][x].isCheckable():
             return
@@ -1692,19 +1700,21 @@ class Ui_MainWindow(object):
         if status == Ui_MainWindow.DEFEAT:
             text = "You lose"
         elif status == Ui_MainWindow.VICTORY:
-            text = "You win"
+            text = f"You win. Your time - {self.time.toString('hh:mm:ss')}"
         else:
             raise "Invalid status"
         ret = msgBox.question(self, 'End game', f"{text}\nDo you want to play again?",
                               QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if ret == QMessageBox.Yes:
-            print('Button QMessageBox.Yes clicked.')
+            self.init_game_configs()
         else:
             sys.exit()
 
     def toggle_flag_status(self):
         self.pushButtonFlag.status = True if self.pushButtonFlag.status == False else False
         self.flag_label.setText("Flag OFF" if self.pushButtonFlag.status == False else "Flag ON")
+        self.centralwidget.setCursor(QCursor(QtCore.Qt.CustomCursor if self.pushButtonFlag.status == False
+                                             else QtCore.Qt.PointingHandCursor))
 
     def timer_event(self):
         self.time = self.time.addSecs(1)
