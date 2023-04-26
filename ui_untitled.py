@@ -11,14 +11,21 @@ class Ui_MainWindow(object):
     LENGTH_AXIS_X = 15
     LENGTH_AXIS_Y = 15
     QUANTITY_BOMBS = 40
+    QUANTITY_FIELDS = (LENGTH_AXIS_X * LENGTH_AXIS_Y) - QUANTITY_BOMBS
+    VICTORY = 1
+    DEFEAT = 2
 
     def __init__(self):
         # Init central widget
         self.centralwidget = QWidget()
         # Init icons
         self.icons = Icon()
+        # Init label bombs
+        self.bombs_label = QLabel()
         # Init timer
         self.time = QTime()
+        self.timer_label = QLabel()
+        self.timer = QTimer()
         # First line
         self.pushButtonA1 = QPushButton()
         self.pushButtonA2 = QPushButton()
@@ -865,6 +872,7 @@ class Ui_MainWindow(object):
         self.flag_label = QLabel(self.centralwidget)
         self.flag_label.setGeometry(QRect(60, 500, 81, 16))
         self.flag_label.setText("Flag OFF")
+        self.buttons_flagged = 0
         # Create central widget
         MainWindow.setCentralWidget(self.centralwidget)
         # Create board
@@ -878,10 +886,16 @@ class Ui_MainWindow(object):
         self.define_other_fields()
         # Create timer
         self.time = QTime(0, 0, 0)
-        timer = QTimer(self)
-        timer.start(1000)
-        timer.timeout.connect(self.timer_event)
-
+        self.timer = QTimer(self)
+        self.timer.start(1000)
+        self.timer.timeout.connect(self.timer_event)
+        self.timer_label = QLabel(self.centralwidget)
+        self.timer_label.setGeometry(QRect(120, 500, 81, 16))
+        self.timer_label.setText("00:00:00")
+        # Create flag label
+        self.bombs_label = QLabel(self.centralwidget)
+        self.bombs_label.setGeometry(QRect(180, 500, 81, 16))
+        self.bombs_label.setText(f"{self.buttons_flagged}/{Ui_MainWindow.QUANTITY_BOMBS}")
 
     def erase_board(self):
         for i in range(Ui_MainWindow.LENGTH_AXIS_Y):
@@ -1589,11 +1603,14 @@ class Ui_MainWindow(object):
             if self.board[y][x].is_flag:
                 icon = self.show_image('g')
                 self.board[y][x].is_flag = False
+                self.buttons_flagged -= 1
             else:
                 icon = self.show_image('f')
                 self.board[y][x].is_flag = True
+                self.buttons_flagged += 1
             self.board[y][x].setIcon(icon)
             self.board[y][x].setIconSize(QSize(28, 28))
+            self.bombs_label.setText(f"{self.buttons_flagged}/{Ui_MainWindow.QUANTITY_BOMBS}")
             return
         if self.board[y][x].is_flag:
             return
@@ -1602,9 +1619,19 @@ class Ui_MainWindow(object):
         self.board[y][x].setIcon(icon)
         self.board[y][x].setIconSize(QSize(28, 28))
         if self.board[y][x].value == 'b':
-            self.end_game()
+            self.end_game(Ui_MainWindow.DEFEAT)
         elif self.board[y][x].value == '0':
             self.process_neighbour_buttons(x, y)
+        if self.check_fields_checkable() == Ui_MainWindow.QUANTITY_FIELDS:
+            self.end_game(Ui_MainWindow.VICTORY)
+
+    def check_fields_checkable(self):
+        count_not_checkable = 0
+        for y in range(0, Ui_MainWindow.LENGTH_AXIS_Y):
+            for x in range(0, Ui_MainWindow.LENGTH_AXIS_X):
+                if not self.board[y][x].isCheckable():
+                    count_not_checkable += 1
+        return count_not_checkable
 
     def show_image(self, value):
         if value == 'b':
@@ -1659,10 +1686,21 @@ class Ui_MainWindow(object):
                                     count_bombs += 1
                     self.board[y][x].value = str(count_bombs)
 
-    def end_game(self):
+    def end_game(self, status):
+        self.timer.stop()
         msgBox = QMessageBox()
-        msgBox.setText("Fim de jogo. Você perdeu")
-        msgBox.exec()
+        if status == Ui_MainWindow.DEFEAT:
+            text = "You lose"
+        elif status == Ui_MainWindow.VICTORY:
+            text = "You win"
+        else:
+            raise "Invalid status"
+        ret = msgBox.question(self, 'End game', f"{text}\nDo you want to play again?",
+                              QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+        if ret == QMessageBox.Yes:
+            print('Button QMessageBox.Yes clicked.')
+        else:
+            sys.exit()
 
     def toggle_flag_status(self):
         self.pushButtonFlag.status = True if self.pushButtonFlag.status == False else False
@@ -1670,7 +1708,7 @@ class Ui_MainWindow(object):
 
     def timer_event(self):
         self.time = self.time.addSecs(1)
-        print(self.time.toString("hh:mm:ss"))
+        self.timer_label.setText(self.time.toString("hh:mm:ss"))
 
 
 class CriarTelaPrincipal(QMainWindow, Ui_MainWindow):
