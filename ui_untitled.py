@@ -5,7 +5,6 @@ from PySide2 import QtCore
 from PySide2.QtGui import QCursor, QMouseEvent
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
-from ButtonFlag import ButtonFlag
 from Icon import Icon
 
 
@@ -277,7 +276,7 @@ class Ui_MainWindow(object):
         # Init board
         self.board = []
         # Init button flag
-        self.pushButtonFlag = ButtonFlag()
+        self.pushButtonFlag = QPushButton()
         # Init label flag
         self.flag_label = QLabel()
 
