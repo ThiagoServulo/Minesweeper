@@ -1,9 +1,13 @@
 from PySide2.QtCore import QSize
 from PySide2.QtGui import QIcon
+from typing import Literal
 
 
 class Icon(QIcon):
     def __init__(self):
+        """
+        Constructor
+        """
         super().__init__()
         self.icon_number_1 = QIcon()
         self.icon_number_1.addFile("images/number_1.jpg", QSize(), QIcon.Normal, QIcon.Off)
@@ -32,41 +36,38 @@ class Icon(QIcon):
         self.icon_gray = QIcon()
         self.icon_gray.addFile("images/gray2.jpg", QSize(), QIcon.Normal, QIcon.Off)
 
-    def get_icon_number_1(self):
-        return self.icon_number_1
-
-    def get_icon_number_2(self):
-        return self.icon_number_2
-
-    def get_icon_number_3(self):
-        return self.icon_number_3
-
-    def get_icon_number_4(self):
-        return self.icon_number_4
-
-    def get_icon_number_5(self):
-        return self.icon_number_5
-
-    def get_icon_number_6(self):
-        return self.icon_number_6
-
-    def get_icon_number_7(self):
-        return self.icon_number_7
-
-    def get_icon_number_8(self):
-        return self.icon_number_8
-
-    def get_icon_blank(self):
-        return self.icon_blank
-
-    def get_icon_bomb(self):
-        return self.icon_bomb
-
-    def get_icon_bomb_exploded(self):
-        return self.icon_bomb_exploded
-
-    def get_icon_gray(self):
-        return self.icon_gray
-
-    def get_icon_flag(self):
-        return self.icon_flag
+    def get_icon(self, value: Literal['b', 'B', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'f', 'g']):
+        """
+        Get icons
+        :param value: Code of the image
+        :return: The icon based in the value parameter
+        """
+        if value == 'b':
+            icon = self.icon_bomb
+        elif value == 'B':
+            icon = self.icon_bomb_exploded
+        elif value == '0':
+            icon = self.icon_blank
+        elif value == '1':
+            icon = self.icon_number_1
+        elif value == '2':
+            icon = self.icon_number_2
+        elif value == '3':
+            icon = self.icon_number_3
+        elif value == '4':
+            icon = self.icon_number_4
+        elif value == '5':
+            icon = self.icon_number_5
+        elif value == '6':
+            icon = self.icon_number_6
+        elif value == '7':
+            icon = self.icon_number_7
+        elif value == '8':
+            icon = self.icon_number_8
+        elif value == 'f':
+            icon = self.icon_flag
+        elif value == 'g':
+            icon = self.icon_gray
+        else:
+            raise "Invalid value"
+        return icon

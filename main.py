@@ -1,23 +1,20 @@
-from random import randint
-from typing import List
-
-MAX_EIXO_X = 15
-MAX_EIXO_Y = 15
-QUANTIDADE_BOMBAS = 20
+import sys
+from Minefield import Minefield
+from PySide2.QtWidgets import *
 
 
-def iniciar_tabuleiro():
-    return [[''] * MAX_EIXO_X for _ in range(MAX_EIXO_Y)]
+class CriarTelaPrincipal(QMainWindow, Minefield):
+    def __init__(self):
+        """
+        Constructor
+        """
+        super(CriarTelaPrincipal, self).__init__()
+        self.setupUi(self)
 
 
-def preencher_bombas_no_tabuleiro(quantidade_bombas, tabuleiro):
-    while sum(linha.count('B') for linha in tabuleiro) < quantidade_bombas:
-        posicao_x = randint(0, MAX_EIXO_X - 1)
-        posicao_y = randint(0, MAX_EIXO_Y - 1)
-        tabuleiro[posicao_x][posicao_y] = 'B' if tabuleiro[posicao_x][posicao_y] == '' else ''
-    return tabuleiro
-
-
-tabuleiro = iniciar_tabuleiro()
-tabuleiro = preencher_bombas_no_tabuleiro(QUANTIDADE_BOMBAS, tabuleiro)
-print(tabuleiro)
+# Entry point of the program
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = CriarTelaPrincipal()
+    window.show()
+    sys.exit(app.exec_())
