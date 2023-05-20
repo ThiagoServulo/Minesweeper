@@ -1,9 +1,9 @@
 import sys
-from Minefield import Minefield
+from Minesweeper import Minesweeper
 from PySide2.QtWidgets import *
 
 
-class CriarTelaPrincipal(QMainWindow, Minefield):
+class CriarTelaPrincipal(QMainWindow, Minesweeper ):
     def __init__(self):
         """
         Constructor

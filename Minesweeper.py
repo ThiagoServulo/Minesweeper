@@ -8,7 +8,7 @@ from Constants import Constants
 from Layout import Layout
 
 
-class Minefield(Layout):
+class Minesweeper(Layout):
     def setupUi(self, game_window):
         """
         Initialize the game window and its settings
