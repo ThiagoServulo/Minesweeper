@@ -1,3 +1,4 @@
+from PySide2.QtGui import QFont
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
 from Button import Button
@@ -14,9 +15,9 @@ class Layout(Button, Timer):
         Timer.__init__(self)
         # Create game window
         self.game_window = game_window
-        self.game_window.resize(470, 550)
-        self.game_window.setMaximumSize(470, 550)
-        self.game_window.setMinimumSize(470, 550)
+        self.game_window.resize(470, 510)
+        self.game_window.setMaximumSize(470, 510)
+        self.game_window.setMinimumSize(470, 510)
         self.game_window.setWindowTitle("Minefield")
         self.game_window.setWindowIcon(self.icon_bomb)
         # Create central widget
@@ -489,24 +490,21 @@ class Layout(Button, Timer):
         self.pushButtonO15.setGeometry(QRect(430, 430, 30, 30))
         # Button flag
         self.pushButtonFlag = QPushButton(self.centralwidget)
-        self.pushButtonFlag.setGeometry(QRect(50, 480, 30, 30))
+        self.pushButtonFlag.setGeometry(QRect(10, 470, 30, 30))
         self.pushButtonFlag.clicked.connect(self.toggle_flag_status)
-        self.pushButtonFlag.setIcon(self.icon_flag)
+        self.pushButtonFlag.setIcon(self.icon_flag_off)
         self.pushButtonFlag.setIconSize(QSize(28, 28))
         # Create timer
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.timer_event)
-        self.timer_label = QLabel(self.centralwidget)
-        self.timer_label.setGeometry(QRect(200, 510, 81, 16))
-        self.timer_label_2 = QLabel(self.centralwidget)
-        self.timer_label_2.setGeometry(QRect(205, 490, 81, 16))
-        self.timer_label_2.setText("Timer")
-        # Create flag label
-        self.flag_label = QLabel(self.centralwidget)
-        self.flag_label.setGeometry(QRect(45, 510, 81, 16))
+        self.timer_label = QLineEdit(self.centralwidget)
+        self.timer_label.setGeometry(QRect(190, 470, 90, 30))
+        self.timer_label.setAlignment(Qt.AlignCenter)
+        self.timer_label.setFont(QFont().setWeight(25))
+        self.timer_label.setReadOnly(True)
         # Create bombs label
-        self.bombs_label = QLabel(self.centralwidget)
-        self.bombs_label.setGeometry(QRect(370, 510, 81, 16))
-        self.bombs_label_2 = QLabel(self.centralwidget)
-        self.bombs_label_2.setGeometry(QRect(350, 490, 81, 16))
-        self.bombs_label_2.setText("Bombs quantity")
+        self.bombs_label = QLineEdit(self.centralwidget)
+        self.bombs_label.setGeometry(QRect(400, 470, 60, 30))
+        self.bombs_label.setAlignment(Qt.AlignCenter)
+        self.bombs_label.setFont(QFont().setWeight(25))
+        self.bombs_label.setReadOnly(True)

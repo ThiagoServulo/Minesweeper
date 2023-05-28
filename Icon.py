@@ -31,12 +31,14 @@ class Icon(QIcon):
         self.icon_bomb.addFile("images/bomb.jpg", QSize(), QIcon.Normal, QIcon.Off)
         self.icon_bomb_exploded = QIcon()
         self.icon_bomb_exploded.addFile("images/bomb_exploded.jpg", QSize(), QIcon.Normal, QIcon.Off)
-        self.icon_flag = QIcon()
-        self.icon_flag.addFile("images/flag.jpg", QSize(), QIcon.Normal, QIcon.Off)
+        self.icon_flag_off = QIcon()
+        self.icon_flag_off.addFile("images/flag_off.jpg", QSize(), QIcon.Normal, QIcon.Off)
+        self.icon_flag_on = QIcon()
+        self.icon_flag_on.addFile("images/flag_on.jpg", QSize(), QIcon.Normal, QIcon.Off)
         self.icon_gray = QIcon()
         self.icon_gray.addFile("images/gray2.jpg", QSize(), QIcon.Normal, QIcon.Off)
 
-    def get_icon(self, value: Literal['b', 'B', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'f', 'g']):
+    def get_icon(self, value: Literal['b', 'B', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'fn', 'ff' 'g']):
         """
         Get icons
         :param value: Code of the image
@@ -64,8 +66,10 @@ class Icon(QIcon):
             icon = self.icon_number_7
         elif value == '8':
             icon = self.icon_number_8
-        elif value == 'f':
-            icon = self.icon_flag
+        elif value == 'fn':
+            icon = self.icon_flag_on
+        elif value == 'ff':
+            icon = self.icon_flag_off
         elif value == 'g':
             icon = self.icon_gray
         else:

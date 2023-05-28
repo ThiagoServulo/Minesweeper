@@ -35,7 +35,6 @@ class Minesweeper(Layout):
         # Reset timer
         self.init_timer()
         # Init labels and cursor
-        self.flag_label.setText("Flag OFF")
         self.bombs_label.setText(f"{self.buttons_flagged}/{Constants.QUANTITY_BOMBS}")
         self.centralwidget.setCursor(QCursor(QtCore.Qt.CustomCursor))
         # Set other fields
@@ -115,6 +114,6 @@ class Minesweeper(Layout):
         Toggle the flag status (on or off), changing the button, the label and the cursor
         """
         self.pushButtonFlag.status = True if self.pushButtonFlag.status == False else False
-        self.flag_label.setText("Flag OFF" if self.pushButtonFlag.status == False else "Flag ON")
+        self.pushButtonFlag.setIcon(self.icon_flag_on if self.pushButtonFlag.status else self.icon_flag_off)
         self.centralwidget.setCursor(QCursor(QtCore.Qt.CustomCursor if self.pushButtonFlag.status == False
                                              else QtCore.Qt.PointingHandCursor))

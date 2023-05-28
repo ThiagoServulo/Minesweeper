@@ -1,4 +1,5 @@
 from PySide2.QtCore import *
+from PyQt5.QtWidgets import QApplication
 from Constants import Constants
 from Board import Board
 
@@ -28,7 +29,7 @@ class Button(Board):
                 self.board[y][x].is_flag = False
                 self.buttons_flagged -= 1
             else:
-                icon = self.get_icon('f')
+                icon = self.get_icon('ff')
                 self.board[y][x].is_flag = True
                 self.buttons_flagged += 1
             self.board[y][x].setIcon(icon)
@@ -789,6 +790,7 @@ class Button(Board):
         # Set the click button fuctions
         for i in range(Constants.LENGTH_AXIS_Y):
             for j in range(Constants.LENGTH_AXIS_X):
+                # self.board[i][j].clicked.connect(lambda: self.process_button(i, j))
                 self.board[i][j].clicked.connect(self.function_click_buttons[i][j])
 
     @staticmethod
