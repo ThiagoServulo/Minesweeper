@@ -11,6 +11,7 @@ class Timer:
         self.timer_label = QLabel()
         self.timer = QTimer()
         self.init_timer()
+        self.timer_paused = False
 
     def init_timer(self):
         """
@@ -19,10 +20,24 @@ class Timer:
         self.time = QTime(0, 0, 0)
         self.timer.start(1000)
         self.timer_label.setText("00:00:00")
+        self.timer_paused = False
+
+    def pause_timer(self):
+        """
+        Pause the timer
+        """
+        self.timer_paused = True
+
+    def resume_timer(self):
+        """
+        Resume the timer
+        """
+        self.timer_paused = False
 
     def timer_event(self):
         """
         Event to timer trigged
         """
-        self.time = self.time.addSecs(1)
-        self.timer_label.setText(self.time.toString("hh:mm:ss"))
+        if not self.timer_paused:
+            self.time = self.time.addSecs(1)
+            self.timer_label.setText(self.time.toString("hh:mm:ss"))

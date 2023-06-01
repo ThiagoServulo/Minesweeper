@@ -9,7 +9,7 @@ class Actions(SqlFunctions):
         """
         SqlFunctions.__init__(self)
 
-    def show_records(self):
+    def show_records(self, obj):
         """
         Show a Message Box with the best times
         """
@@ -24,9 +24,11 @@ class Actions(SqlFunctions):
         else:
             message = '\n'.join(f'{i+1} - {time}\t' for i, time in enumerate(times))
         messageBox.setText(message)
+        obj.pause_timer()
         messageBox.exec()
+        obj.resume_timer()
 
-    def erase_records(self):
+    def erase_records(self, obj):
         """
         Erase all the times from database
         """
@@ -38,8 +40,10 @@ class Actions(SqlFunctions):
         messageBox.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         messageBox.setDefaultButton(QMessageBox.No)
         messageBox.setFont(font)
+        obj.pause_timer()
         if messageBox.exec_() == QMessageBox.Yes:
             self.drop_table_best_times()
+        obj.resume_timer()
 
     def save_time(self, time: str):
         """

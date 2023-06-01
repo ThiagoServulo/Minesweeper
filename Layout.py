@@ -512,10 +512,10 @@ class Layout(Button, Timer, Actions):
         # Create actions
         self.action_records = QAction('Records', self)
         self.action_records.setShortcut('Ctrl+F')
-        self.action_records.triggered.connect(self.show_records)
+        self.action_records.triggered.connect(lambda: self.show_records(self))
         self.action_erase_records = QAction('Erase records', self)
         self.action_erase_records.setShortcut('Ctrl+D')
-        self.action_erase_records.triggered.connect(self.erase_records)
+        self.action_erase_records.triggered.connect(lambda : self.erase_records(self))
         # Create menu bar
         self.menu = QMenu('Menu', self)
         self.menu.addAction(self.action_records)
