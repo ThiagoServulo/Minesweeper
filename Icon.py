@@ -38,7 +38,7 @@ class Icon(QIcon):
         self.icon_gray = QIcon()
         self.icon_gray.addFile("images/gray2.jpg", QSize(), QIcon.Normal, QIcon.Off)
 
-    def get_icon(self, value: Literal['b', 'B', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'fn', 'ff' 'g']):
+    def get_icon(self, value: Literal['b', 'B', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'fn', 'ff' 'g']) -> QIcon():
         """
         Get icons
         :param value: Code of the image

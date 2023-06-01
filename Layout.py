@@ -3,9 +3,9 @@ from PySide2.QtCore import *
 from PySide2.QtWidgets import *
 from Button import Button
 from Timer import Timer
+from Actions import Actions
 
-
-class Layout(Button, Timer):
+class Layout(Button, Timer, Actions):
     def __init__(self, game_window):
         """
         Constructor
@@ -13,11 +13,12 @@ class Layout(Button, Timer):
         """
         Button.__init__(self)
         Timer.__init__(self)
+        Actions.__init__(self)
         # Create game window
         self.game_window = game_window
-        self.game_window.resize(470, 510)
-        self.game_window.setMaximumSize(470, 510)
-        self.game_window.setMinimumSize(470, 510)
+        self.game_window.resize(470, 530)
+        self.game_window.setMaximumSize(470, 530)
+        self.game_window.setMinimumSize(470, 530)
         self.game_window.setWindowTitle("Minefield")
         self.game_window.setWindowIcon(self.icon_bomb)
         # Create central widget
@@ -508,3 +509,16 @@ class Layout(Button, Timer):
         self.bombs_label.setAlignment(Qt.AlignCenter)
         self.bombs_label.setFont(QFont().setWeight(25))
         self.bombs_label.setReadOnly(True)
+        # Create actions
+        self.action_records = QAction('Records', self)
+        self.action_records.setShortcut('Ctrl+F')
+        self.action_records.triggered.connect(self.show_records)
+        self.action_erase_records = QAction('Erase records', self)
+        self.action_erase_records.setShortcut('Ctrl+D')
+        self.action_erase_records.triggered.connect(self.erase_records)
+        # Create menu bar
+        self.menu = QMenu('Menu', self)
+        self.menu.addAction(self.action_records)
+        self.menu.addAction(self.action_erase_records)
+        self.menubar = self.menuBar()
+        self.menubar.addMenu(self.menu)

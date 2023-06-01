@@ -98,6 +98,7 @@ class Minesweeper(Layout):
             text: str = "You lose"
         elif status == Constants.VICTORY:
             text: str = f"You win. Your time - {self.time.toString('hh:mm:ss')}"
+            self.save_time(self.time.toString('hh:mm:ss'))
         else:
             raise "Invalid status"
         ret = msgBox.question(self, 'End game', f"{text}\nDo you want to play again?",
