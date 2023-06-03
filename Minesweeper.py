@@ -97,6 +97,7 @@ class Minesweeper(Layout):
         if status == Constants.DEFEAT:
             text: str = "You lose"
         elif status == Constants.VICTORY:
+            self.show_all_bombs()
             text: str = f"You win. Your time - {self.time.toString('hh:mm:ss')}"
             self.save_time(self.time.toString('hh:mm:ss'))
         else:
@@ -118,3 +119,12 @@ class Minesweeper(Layout):
         self.pushButtonFlag.setIcon(self.icon_flag_on if self.pushButtonFlag.status else self.icon_flag_off)
         self.centralwidget.setCursor(QCursor(QtCore.Qt.CustomCursor if self.pushButtonFlag.status == False
                                              else QtCore.Qt.PointingHandCursor))
+    def show_all_bombs(self):
+        """
+        Show all bombs on the board
+        """
+        for y in range(0, Constants.LENGTH_AXIS_Y):
+            for x in range(0, Constants.LENGTH_AXIS_X):
+                if self.board[y][x].value == 'b':
+                    self.board[y][x].setCheckable(False)
+                    self.board[y][x].setIcon(self.get_icon('b'))

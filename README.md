@@ -18,7 +18,7 @@ The rules of Minesweeper are simple:
 * If you discover all the fields that didn't have mines, congratulations you've won the game.
 
 ## Hints
-* **Mark the mines:** If you suspect that a square contains a mine, click on the flag and mark it.
+* **Mark the mines:** If you suspect that a square contains a mine, click on the flag and mark it or click using the right mouse button.
 
 * **Study the patterns:** If three squares in a row display the numbers 2, 3, and 2, there are probably three mines lined up next to those numbers. If a square shows the number 8, all squares surrounding it are mined.
 
@@ -28,6 +28,20 @@ The rules of Minesweeper are simple:
 The game was developed in Python language, using the QT Designer library to create the graphical interface.
 
 ## Releases
+**V1.0.1**
+* First functional version from the game.
+
+**V1.1.0** 
+* Added a timer.
+* Created a ranking of best times.
+* Added the option to mark flags with the right mouse button.
+* New board layout.
+
+## Layout
+
+* The game board layout
+
+![Layout](/images/screenshot_game.jpg "layout")
 
 ## Author
 - [@thiagoservulo](https://github.com/ThiagoServulo)

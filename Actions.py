@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QIcon
 from SqlFucntions import SqlFunctions
 
 class Actions(SqlFunctions):
@@ -17,6 +17,7 @@ class Actions(SqlFunctions):
         font.setPointSize(10)
         messageBox = QMessageBox()
         messageBox.setWindowTitle("Best Times")
+        messageBox.setWindowIcon(QIcon("images/bomb.jpg"))
         messageBox.setFont(font)
         times = self.get_times()
         if times == []:
@@ -37,6 +38,7 @@ class Actions(SqlFunctions):
         messageBox = QMessageBox()
         messageBox.setWindowTitle("Delete records")
         messageBox.setText("Are you sure to delete the records ?")
+        messageBox.setWindowIcon(QIcon("images/bomb.jpg"))
         messageBox.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         messageBox.setDefaultButton(QMessageBox.No)
         messageBox.setFont(font)
